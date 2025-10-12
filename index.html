@@ -29,6 +29,7 @@
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="assets/vendors/swiper/swiper-bundle.min.css">
+		<link rel="stylesheet" href="assets/vendors/popover/popover.min.css">
 		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
 
@@ -45,7 +46,7 @@
 			<div class="header__brand">
 				<!-- Brand logo -->
 				<a href="#/">
-					<img src="assets/images/qrCall_BI_header.png" class="brand-img" alt="QRCall BI">
+					<img src="assets/images/qrCall_BI.png" class="brand-img" alt="QRCall BI">
 				</a>
 				<!-- Brand title -->
 				<p class="visually-hidden">QRcall</p>
@@ -53,10 +54,18 @@
 			<div class="header__content">
 				<!-- Navigation Toggler -->
 				<button class="ic-btn navbar-toggler" type="button" aria-label="Navigation Toggler">
-					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 36 33" fill="none">
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 36 33" fill="none">
 						<rect width="36" height="5" fill="#444444"/>
 						<rect y="14" width="36" height="5" fill="#444444"/>
 						<rect y="28" width="36" height="5" fill="#444444"/>
+					</svg> -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+						<mask id="mask0_5_15027" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
+							<rect width="22" height="22" fill="#D9D9D9"/>
+						</mask>
+						<g mask="url(#mask0_5_15027)">
+							<path d="M3.66667 6.41927C3.40694 6.41927 3.18924 6.33142 3.01354 6.15573C2.83785 5.98003 2.75 5.76233 2.75 5.5026C2.75 5.24288 2.83785 5.02517 3.01354 4.84948C3.18924 4.67378 3.40694 4.58594 3.66667 4.58594H18.3333C18.5931 4.58594 18.8108 4.67378 18.9865 4.84948C19.1622 5.02517 19.25 5.24288 19.25 5.5026C19.25 5.76233 19.1622 5.98003 18.9865 6.15573C18.8108 6.33142 18.5931 6.41927 18.3333 6.41927H3.66667ZM3.66667 17.4193C3.40694 17.4193 3.18924 17.3314 3.01354 17.1557C2.83785 16.98 2.75 16.7623 2.75 16.5026C2.75 16.2429 2.83785 16.0252 3.01354 15.8495C3.18924 15.6738 3.40694 15.5859 3.66667 15.5859H18.3333C18.5931 15.5859 18.8108 15.6738 18.9865 15.8495C19.1622 16.0252 19.25 16.2429 19.25 16.5026C19.25 16.7623 19.1622 16.98 18.9865 17.1557C18.8108 17.3314 18.5931 17.4193 18.3333 17.4193H3.66667ZM3.66667 11.9193C3.40694 11.9193 3.18924 11.8314 3.01354 11.6557C2.83785 11.48 2.75 11.2623 2.75 11.0026C2.75 10.7429 2.83785 10.5252 3.01354 10.3495C3.18924 10.1738 3.40694 10.0859 3.66667 10.0859H18.3333C18.5931 10.0859 18.8108 10.1738 18.9865 10.3495C19.1622 10.5252 19.25 10.7429 19.25 11.0026C19.25 11.2623 19.1622 11.48 18.9865 11.6557C18.8108 11.8314 18.5931 11.9193 18.3333 11.9193H3.66667Z" fill="#1C1B1F"/>
+						</g>
 					</svg>
 					<span class="visually-hidden">전체 메뉴</span>
 				</button>
@@ -65,77 +74,152 @@
 					<div class="offcanvas-body">
 						<ul class="navbar-nav">
 							<li class="nav-item dropdown">
-								<a class="nav-link" href="#/services">서비스 소개</a>
+								<a class="nav-link" href="#/services"><span>서비스 소개</span></a>
 								<ul class="dropdown-menu">
 									<li class="nav-item">
-										<a class="nav-link" href="#/services/qr-url">QR & URL</a>
+										<a class="nav-link" href="#/services/qr-url"><span>QR & URL</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/services/custom-page">나만의 페이지</a>
+										<a class="nav-link" href="#/services/custom-page"><span>나만의 페이지</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/services/contact-options">연결 기능</a>
+										<a class="nav-link" href="#/services/contact-options"><span>연결 기능</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/services/data-manager">데이터 연동</a>
+										<a class="nav-link" href="#/services/data-manager"><span>데이터 연동</span></a>
 									</li>
 								</ul>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link" >솔루션</a>
+								<a class="nav-link" ><span>솔루션</span></a>
 								<ul class="dropdown-menu">
 									<li class="nav-item">
-										<a class="nav-link" href="#/solutions/cs">고객 지원 서비스</a>
+										<a class="nav-link" href="#/solutions/cs"><span>고객 지원 서비스</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/solutions/mycar">All-In-One MYCa</a>
+										<a class="nav-link" href="#/solutions/mycar"><span>All-In-One MYCa</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/solutions/operation">비즈니스 도메인</a>
+										<a class="nav-link" href="#/solutions/operation"><span>비즈니스 도메인</span></a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#/solutions/o4o">O4O 마케팅 채널</a>
+										<a class="nav-link" href="#/solutions/o4o"><span>O4O 마케팅 채널</span></a>
 									</li>
 									
 								</ul>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#/pricing">가격안내</a>
+								<a class="nav-link" href="#/pricing"><span>가격안내</span></a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="header__content control">
-				<button class="btn btn-secondary btn-sm" type="button" aria-label="로그인">
-					<span>로그인</span>
-				</button>
-				<button class="btn btn-primary btn-sm" type="button" aria-label="도입문의">
-					<span>도입문의</span>
-				</button>
+				<a class="btn btn-secondary btn-sm" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
+					로그인
+				</a>
+				<a class="btn btn-primary btn-sm" href="#/contact" role="button" aria-label="도입문의">
+					도입문의
+				</a>
 			</div>
 		</nav>
 	</header>
 </template>
 	<!-- Footer Template -->
 <template id="tpl-footer">
-	<footer class="footer">
-	<div class="footer__inner">
-		<div class="footer__brand">
-		<a href="#/">
-			<img src="assets/images/qube7_ci.png" class="brand-img" alt="큐브7 로고">
-		</a>
+	<!-- <footer class="footer">
+		<div class="footer__inner">
+			<div class="footer__brand">
+			<a href="#/">
+				<img src="assets/images/qrCall_BI_w.png" class="brand-img" alt="QRCall BI">
+			</a>
+			</div>
+			<div class="footer__content">
+			<p class="footer__company">
+				<span class="footer__line">주식회사 큐브7</span><span class="footer__line">대표자 : 박경철</span>
+			</p>
+			<address class="footer__addr">
+				<span class="footer__line">사업자등록번호 : 796-86-03081</span>
+				<span class="footer__line">주소 : 서울특별시 송파구 송이로 96, 2층(가락동, 디오티스 빌딩)</span>
+			</address>
+			<p class="footer__copy">Qube7 INC. All rights reserved</p>
+			</div>
 		</div>
-		<div class="footer__content">
-		<p class="footer__company">(주) 큐브7</p>
-		<address class="footer__addr">
-			<span class="footer__line">사업자등록번호 : <b>796-86-03081</b></span>
-			<span class="footer__line">주소 : 서울특별시 송파구 송이로 96, 2층(가락동, 디오티스 빌딩)</span>
-		</address>
-		<p class="footer__copy">Qube7 INC. All rights reserved</p>
+	</footer> -->
+
+
+<footer class="footer">
+	<div class="footer__inner">
+		<!-- Left Info -->
+		<div class="footer__content content__left company">
+			<div class="footer__brand">
+				<a href="#/"><img src="assets/images/qrCall_BI_w.png" class="brand-img" alt="QRcall Logo"></a>
+			</div>
+			<ul class="footer__info">
+				<li>
+					<strong>주식회사 큐브7</strong><span>|</span><span>대표자 : 박경철</span>
+				</li>
+				<li>
+					<span>사업자등록번호 : 796-86-03081</span>
+				</li>
+				<li>
+					<span>주소 : 서울특별시 송파구 송이로 96, 2층(가락동, 디오트리스 빌딩)</span>
+				</li>
+				<li>
+					<span>이메일 문의 : <a href="mailto:help@qube7.co.kr">help@qube7.co.kr</a></span>
+				</li>
+				<li class="policy">
+					<a href="#/">개인정보 처리방침</a><span>|</span><a href="#/">서비스 이용약관</a>
+				</li>
+				<li class="copy">
+					<span>Qube7 INC. All rights reserved</span>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Center Links -->
+		<div class="footer__content content__center sitemap offcanvas features" id="features">
+			<div class="content__col">
+				<h4>서비스 소개</h4>
+				<ul class="content__col">
+					<li><a href="#">QR & URL</a></li>
+					<li><a href="#">나만의 페이지</a></li>
+					<li><a href="#">연결 기능</a></li>
+					<li><a href="#">데이터 연동</a></li>
+				</ul>
+			</div>
+			<div class="content__col">
+				<h4>솔루션</h4>
+				<ul>
+					<li><a href="#">고객 맞춤 CS</a></li>
+					<li><a href="#">비즈니스 운영</a></li>
+					<li><a href="#">O4O 채널</a></li>
+					<li><a href="#">All-In-One MYCar</a></li>
+				</ul>
+			</div>
+			<div class="content__col">
+				<h4>가격 안내</h4>
+				<ul>
+					<li><a href="#">구독형 서비스</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Right App Buttons -->
+		<div class="footer__content content__right externalLink">
+			<a href="https://apps.apple.com/kr/app/qrcall-%EC%8A%A4%EC%BA%94%EC%9C%BC%EB%A1%9C-%EC%97%B0%EA%B2%B0%EB%90%98%EB%8A%94-%EA%B0%80%EC%B9%98/id6612018144">
+				<img src="assets/images/app_store.png" alt="Download on the App Store">
+			</a>
+			<a href="https://play.google.com/store/apps/details?id=kr.qrcall&hl=ko" target="_blank ">
+				<img src="assets/images/google_play.png" alt="Get it on Google Play">
+			</a>
 		</div>
 	</div>
-	</footer>
+
+	
+</footer>
+
 </template>	
 
 <!-- 각 페이지 템플릿 -->
@@ -693,7 +777,7 @@
 </template>
 
 
-<template id="tpl-solutions-cs">
+<template id="tpl-business-cs">
 	<div class="section">
 		<div class="section-block row">
 			<div class="text-wrap column column-start">
@@ -802,7 +886,7 @@
 
 </template>
 
-<template id="tpl-solutions-mycar">
+<template id="tpl-business-mycar">
 	<div class="section">
 		<div class="section-block row">
 			<div class="text-wrap column column-start">
@@ -892,7 +976,7 @@
 	</div>
 </template>
 
-<template id="tpl-solutions-operation">
+<template id="tpl-business-operation">
 	<div class="section">
 		<div class="section-block row">
 			<div class="text-wrap column column-start">
@@ -976,7 +1060,7 @@
 	</div>
 </template>
 
-<template id="tpl-solutions-o4o">
+<template id="tpl-business-o4o">
 	<div class="section">
 		<div class="section-block row">
 			<div class="text-wrap column column-start">
@@ -1296,6 +1380,17 @@
 
 		<!-- JS 공통 -->
 		<script src="assets/vendors/swiper/swiper-bundle.min.js"></script>
+		<script src="assets/vendors/popover/popover.min.min.js"></script>
 		<script src="assets/js/app.js"></script>
+
+		<!-- <script>
+			const btn = document.getElementById("features");
+			// JS 모바일 감지 숨김
+			if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+				btn.classList.add("hidden");   // 모바일 → 숨김
+			} else {
+				btn.classList.remove("hidden"); // PC → 보임
+			}
+		</script>-->
 	</body>
 </html>

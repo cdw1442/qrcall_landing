@@ -183,6 +183,7 @@ function initSwiper() {
 // ==============================
 const routes = {
 	'/': 'tpl-home',
+	
 	'/services/qr-url': 'tpl-services-qrUrl',
 	'/services/custom-page': 'tpl-services-customPage',
 	'/services/contact-options': 'tpl-services-contactOptions',
