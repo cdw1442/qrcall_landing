@@ -671,8 +671,6 @@ body {
 }
 .company {
 	flex-direction: column;
-	font-size: 0.8333em;
-	line-height: 1.2000em;
 }
 .footer__brand {
 	margin-bottom: 2.5000em;
@@ -683,11 +681,13 @@ body {
 .footer__info {
 	display: flex;
 	flex-direction: column;
-	gap: 0.8333rem;
+	gap: 0.8333em;
 }
 .footer__info > * {
 	display: flex;
-	column-gap: 0.8333rem;
+	column-gap: 0.8333em;
+	font-size: 0.8333em;
+	line-height: 1.2000em;
 }
 .footer__info strong {
 	font-weight: var(--font-weight-semibold);
@@ -701,16 +701,16 @@ body {
 	min-width: 9.1667em;
 	display: flex;
 	flex-direction: column;
-	gap: 1.1667rem;
+	gap: 1.1667em;
 }
 .content__col > * {
 	display: flex;
 	flex-direction: column;
-	gap: 1.1667rem;
+	gap: 1.1667em;
 }
 .sitemap * {
-	font-size: 1.1667em;
-	line-height: 17px;
+	font-size: 0.8750rem;
+	line-height: 1.0625rem;
 	font-weight: var(--font-weight-regular);
 }
 .sitemap h4 {
