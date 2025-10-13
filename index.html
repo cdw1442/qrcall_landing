@@ -51,13 +51,16 @@
 			<p class="visually-hidden">QRcall</p>
 		</div>
 		<div class="header__content">
+			<div class="control">
+				<a class="btn btn-secondary btn-sm" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
+					로그인
+				</a>
+				<a class="btn btn-primary btn-sm" href="#/contact" role="button" aria-label="도입문의">
+					도입문의
+				</a>
+			</div>
 			<!-- Navigation Toggler -->
 			<button class="ic-btn navbar-toggler" type="button" aria-label="Navigation Toggler">
-				<!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 36 33" fill="none">
-					<rect width="36" height="5" fill="#444444"/>
-					<rect y="14" width="36" height="5" fill="#444444"/>
-					<rect y="28" width="36" height="5" fill="#444444"/>
-				</svg> -->
 				<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
 					<mask id="mask0_5_15027" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
 						<rect width="22" height="22" fill="#D9D9D9"/>
@@ -72,20 +75,20 @@
 			<div class="offcanvas" tabindex="-1" id="mainNavbar" aria-label="Main Navigation">					
 				<div class="offcanvas-body">
 					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
+						<li class="nav-item dropdown menu-services">
 							<a class="nav-link" href="#/services"><span>서비스 소개</span></a>
 							<ul class="dropdown-menu">
 								<li class="nav-item">
-									<a class="nav-link" href="#/services/qr-url"><span>QR & URL</span></a>
+									<i class="icon qr"></i><a class="nav-link" href="#/services/qr-url"><span>QR & URL</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/services/custom-page"><span>나만의 페이지</span></a>
+									<i class="icon page"></i><a class="nav-link" href="#/services/custom-page"><span>나만의 페이지</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/services/contact-options"><span>연결 기능</span></a>
+									<i class="icon contact"></i><a class="nav-link" href="#/services/contact-options"><span>연결 기능</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/services/data-manager"><span>데이터 연동</span></a>
+									<i class="icon data"></i><a class="nav-link" href="#/services/data-manager"><span>데이터 연동</span></a>
 								</li>
 							</ul>
 						</li>
@@ -93,16 +96,16 @@
 							<a class="nav-link" ><span>솔루션</span></a>
 							<ul class="dropdown-menu">
 								<li class="nav-item">
-									<a class="nav-link" href="#/solutions/cs"><span>고객 지원 서비스</span></a>
+									<i class="nav-link"></i><a class="nav-link" href="#/solutions/cs"><span>고객 지원 서비스</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/solutions/mycar"><span>All-In-One MYCa</span></a>
+									<i class="nav-link"></i><a class="nav-link" href="#/solutions/mycar"><span>All-In-One MYCa</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/solutions/operation"><span>비즈니스 도메인</span></a>
+									<i class="nav-link"></i><a class="nav-link" href="#/solutions/operation"><span>비즈니스 도메인</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#/solutions/o4o"><span>O4O 마케팅 채널</span></a>
+									<i class="nav-link"></i><a class="nav-link" href="#/solutions/o4o"><span>O4O 마케팅 채널</span></a>
 								</li>
 								
 							</ul>
@@ -113,14 +116,6 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div class="header__content control">
-			<a class="btn btn-secondary btn-sm" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
-				로그인
-			</a>
-			<a class="btn btn-primary btn-sm" href="#/contact" role="button" aria-label="도입문의">
-				도입문의
-			</a>
 		</div>
 	</nav>
 </template>
