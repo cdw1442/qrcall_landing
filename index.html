@@ -79,7 +79,7 @@
 							<a class="nav-link" href="#/services"><span>서비스 소개</span></a>
 							<ul class="dropdown-menu">
 								<li class="nav-item">
-									<i class="icon qr"></i><a class="nav-link" href="#/services/qr-url"><span>QR & URL</span></a>
+									<i class="icon qr"></i><a class="nav-link" href="#/services/qr-url"><span>QR&URL</span></a>
 								</li>
 								<li class="nav-item">
 									<i class="icon page"></i><a class="nav-link" href="#/services/custom-page"><span>나만의 페이지</span></a>
@@ -96,22 +96,21 @@
 							<a class="nav-link" ><span>솔루션</span></a>
 							<ul class="dropdown-menu">
 								<li class="nav-item">
-									<i class="icon cs"></i><a class="nav-link" href="#/solutions/cs"><span>고객 지원 서비스</span></a>
+									<i class="icon cs"></i><a class="nav-link" href="#/solutions/cs"><span>고객맞춤 CS</span></a>
+								</li>
+								<li class="nav-item">
+									<i class="icon domain"></i><a class="nav-link" href="#/solutions/operation"><span>비즈니스운영 </span></a>
+								</li>
+								<li class="nav-item">
+									<i class="icon marketing"></i><a class="nav-link" href="#/solutions/o4o"><span>O4O 채널</span></a>
 								</li>
 								<li class="nav-item">
 									<i class="icon parking"></i><a class="nav-link" href="#/solutions/mycar"><span>All-In-One MYCa</span></a>
 								</li>
-								<li class="nav-item">
-									<i class="icon domain"></i><a class="nav-link" href="#/solutions/operation"><span>비즈니스 도메인</span></a>
-								</li>
-								<li class="nav-item">
-									<i class="icon marketing"></i><a class="nav-link" href="#/solutions/o4o"><span>O4O 마케팅 채널</span></a>
-								</li>
-								
 							</ul>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#/pricing"><span>가격안내</span></a>
+							<a class="nav-link" href="#/pricing"><span>가격 안내</span></a>
 						</li>
 					</ul>
 				</div>
@@ -128,20 +127,20 @@
 				<a href="#/"><img src="assets/images/qrCall_BI_w.png" class="brand-img" alt="QRcall Logo"></a>
 			</div>
 			<ul class="footer__info">
-				<li>
+				<li class="name">
 					<strong>주식회사 큐브7</strong><span>|</span><span>대표자 : 박경철</span>
 				</li>
-				<li>
+				<li class="business">
 					<span>사업자등록번호 : 796-86-03081</span>
 				</li>
-				<li>
+				<li class="addr">
 					<span>주소 : 서울특별시 송파구 송이로 96, 2층(가락동, 디오트리스 빌딩)</span>
 				</li>
-				<li>
+				<li class="email">
 					<span>이메일 문의 : <a href="mailto:help@qube7.co.kr">help@qube7.co.kr</a></span>
 				</li>
 				<li class="policy">
-					<a href="#/">개인정보 처리방침</a><span>|</span><a href="#/">서비스 이용약관</a>
+					<a href="#/privacy-policy">개인정보 처리방침</a><span>|</span><a href="#/terms-of-service">서비스 이용약관</a>
 				</li>
 				<li class="copy">
 					<span>Qube7 INC. All rights reserved</span>
@@ -154,7 +153,7 @@
 			<div class="content__col">
 				<h4>서비스 소개</h4>
 				<ul class="content__col">
-					<li><a href="#/services/qr-url">QR & URL</a></li>
+					<li><a href="#/services/qr-url">QR&URL</a></li>
 					<li><a href="#/services/custom-page">나만의 페이지</a></li>
 					<li><a href="#/services/contact-options">연결 기능</a></li>
 					<li><a href="#/services/data-manager">데이터 연동</a></li>
@@ -178,11 +177,11 @@
 		</div>
 
 		<!-- Right App Buttons -->
-		<div class="footer__content content__right externalLink">
-			<a href="https://apps.apple.com/kr/app/qrcall-%EC%8A%A4%EC%BA%94%EC%9C%BC%EB%A1%9C-%EC%97%B0%EA%B2%B0%EB%90%98%EB%8A%94-%EA%B0%80%EC%B9%98/id6612018144">
+		<div class="footer__content content__right externalLink features">
+			<a href="https://apps.apple.com/kr/app/qrcall-%EC%8A%A4%EC%BA%94%EC%9C%BC%EB%A1%9C-%EC%97%B0%EA%B2%B0%EB%90%98%EB%8A%94-%EA%B0%80%EC%B9%98/id6612018144" target="_blank">
 				<img src="assets/images/app_store.png" alt="Download on the App Store">
 			</a>
-			<a href="https://play.google.com/store/apps/details?id=kr.qrcall&hl=ko" target="_blank ">
+			<a href="https://play.google.com/store/apps/details?id=kr.qrcall&hl=ko" target="_blank">
 				<img src="assets/images/google_play.png" alt="Get it on Google Play">
 			</a>
 		</div>
@@ -305,7 +304,7 @@
 	</div>
 	
 </template>
-
+<!-- QR & URL -->
 <template id="tpl-services-qrUrl">
 	<div class="section">
 		<div class="section-block row">
@@ -414,7 +413,7 @@
 
 
 </template>
-
+<!-- 나만의 페이지 -->
 <template id="tpl-services-customPage">
 	<div class="section">
 		<div class="section-block row">
@@ -523,7 +522,7 @@
 
 
 </template>
-
+<!-- 연결 기능 -->
 <template id="tpl-services-contactOptions">
 	<div class="section">
 		<div class="section-block row">
@@ -632,7 +631,7 @@
 
 
 </template>
-
+<!-- 데이터 연결 -->
 <template id="tpl-services-dataManager">
 	<div class="section">
 		<div class="section-block row">
@@ -741,8 +740,7 @@
 
 
 </template>
-
-
+<!-- 고객 맞춤 CS -->
 <template id="tpl-business-cs">
 	<div class="section">
 		<div class="section-block row">
@@ -851,7 +849,7 @@
 
 
 </template>
-
+<!-- All-In-One MYCar -->
 <template id="tpl-business-mycar">
 	<div class="section">
 		<div class="section-block row">
@@ -941,7 +939,7 @@
 		</div>
 	</div>
 </template>
-
+<!-- 비즈니스 운영 -->
 <template id="tpl-business-operation">
 	<div class="section">
 		<div class="section-block row">
@@ -1025,7 +1023,7 @@
 		</div>
 	</div>
 </template>
-
+<!-- O4O 채널 -->
 <template id="tpl-business-o4o">
 	<div class="section">
 		<div class="section-block row">
@@ -1132,21 +1130,34 @@
 		</div>
 	</div>
 </template>
-
+<!-- 가격 안내 -->
 <template id="tpl-pricing">
-	<div class="section" style="width: 100%; height: 500px; text-align: center;">
+	<div class="section" style="width: 100%; height: 500px; text-align: center; vertical-align: middle;">
 		<h1>가격 안내</h1>
 	</div>
 	 
 </template>
-
+<!-- 도입문의 -->
 <template id="tpl-contact">
-	<div class="section"  style="width: 100%; height: 500px; text-align: center;">
+	<div class="section"  style="width: 100%; height: 500px; text-align: center; vertical-align: middle;">
 		<h1>도입문의</h1>
 	</div>
 	
 </template>
-
+<!-- 개인정보처리방침 -->
+<template id="tpl-privacy">
+	<div class="section"  style="width: 100%; height: 500px; text-align: center; vertical-align: middle;">
+		<h1>개인정보처리방침</h1>
+	</div>
+	
+</template>
+<!-- 이용약관 -->
+<template id="tpl-terms">
+	<div class="section"  style="width: 100%; height: 500px; text-align: center; vertical-align: middle;">
+		<h1>이용약관</h1>
+	</div>
+	
+</template>
 
 		<!-- JS 공통 -->
 		<script src="assets/vendors/swiper/swiper-bundle.min.js"></script>

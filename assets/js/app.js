@@ -195,7 +195,10 @@ const routes = {
 	'/solutions/operation': 'tpl-business-operation',
 	
 	'/pricing': 'tpl-pricing',
-	'/contact': 'tpl-contact'
+	'/contact': 'tpl-contact',
+
+	'/privacy-policy': 'tpl-privacy',
+	'/terms-of-service': 'tpl-terms'
 ,
 };
 
