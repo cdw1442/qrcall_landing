@@ -584,9 +584,16 @@ body {
 	font-weight: var(--font-weight-medium);
 	line-height: 1.1429em;
 }
+.btn_toggle {
+	display: none;
+}
 /* dropdown */
 .dropdown {
 	position: relative;
+}
+.dropdown > ul:not(.dropdown-menu) {
+	display: flex;
+	align-items: center;
 }
 .dropdown-menu {
 	display: none;
@@ -864,7 +871,7 @@ body {
 		flex-direction: column;
 	}
 	.offcanvas {
-		visibility: hidden;
+		/* visibility: hidden; */
 		width: 100%;
 		max-width: 100%;
 		position: fixed;
@@ -879,21 +886,30 @@ body {
 		transition: transform .2s ease-in-out;	
 	}
 	.offcanvas.is-show {
-		visibility: visible;
+		/* visibility: visible; */
 		transform: none;
 		overflow: auto;
 	}
 	.offcanvas.is-show .offcanvas-body {
 		padding: 0 1.2500em;
 	}
-	.navbar-nav > .nav-item {
+	.dropdown {
+		width: 100%;
+	}
+	.dropdown > ul:not(.dropdown-menu) {
 		width: 100%;
 		border-top: 1px solid rgba(var(--black-rgb), 0.15);
 	}
-	.navbar-nav > .nav-item:first-child {
+	.dropdown:first-child > ul:not(.dropdown-menu) {
 		border-top: 0 solid rgba(var(--black-rgb), 0.15);
 	}	
-	.navbar-nav > .nav-item > .nav-link {
+	.dropdown > ul:not(.dropdown-menu) .nav-item {
+		flex: 1 auto;
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--gray-800);
 		padding: 0.9375em;
 	}
 	.nav-link > span {
@@ -914,26 +930,35 @@ body {
 	.nav-item .icon {
 		width: 1.1875em;
 		height: 1.1875em;
+		color: var(--gray-800);
 	}
 	.dropdown-menu .nav-link > span  {
 		font-size: 1em;
 		line-height: 1.1875em;
 	}
-	.navbar-nav > .dropdown > .nav-link:after {
+	.dropdown:has(.dropdown-menu) .btn_toggle {
+		flex-grow: 0;
+		display: flex;
+		justify-content: center;
+        align-items: center;
+		width: 1.3750em;
+		height: 1.3750em;
+	}
+	.btn_toggle:after {
 		display: inline-block;
 		width: 0.5em;
 		height: 0.5em;
 		content: " ";
 		border-style: solid;
 		border-width: 0.1em 0.1em 0 0;
-		margin-top: -0.25rem;
-		margin-left: auto;
-		margin-right: 0.6250rem;
+		transform: translateX(-0.25em);
+		transform: translateY(-0.25em);
 		transform: rotate(135deg);
 		transition: transform 0.25s;
 	}
-	.navbar-nav > .dropdown > .nav-link.is-active:after {
-		transform: rotate(-45deg); 
+	.btn_toggle.is-active:after {
+		transform: rotate(-45deg);
+		margin-top: 0.25em;
 	}
 	.swiper-slide img {
 		min-height: 18rem;
