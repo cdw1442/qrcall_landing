@@ -158,8 +158,8 @@
 	/* section --section- */
 	--section-padding-y-desktop: 5.6250rem;
 	--section-padding-x-desktop: 5.6250rem;
-	--section-padding-y-mobile: 5.6250rem;
-	--section-padding-x-mobile: 5.6250rem;
+	--section-padding-y-mobile: 3.4375rem;
+	--section-padding-x-mobile: 3.4375rem;
 
 }
 /* reboot ------------------------------------------------------- */
@@ -317,6 +317,9 @@ body {
 	justify-content: space-evenly;
 	align-items: center;
 	gap: 1rem;
+}
+.section-block.row {
+	justify-content: center;
 }
 /* col: row 안 아이템 균등비율 필요 시 */
 .col { 
@@ -707,7 +710,7 @@ body {
 
 /* page ------------------------------------------------------- */
 .bg-tint-violet .section-block {
-	--section-padding-y-desktop: 4.3750rem;
+	--section-padding-y-desktop: 5.8333em;
 }
 
 
@@ -743,9 +746,7 @@ body {
 @media (max-width: 767.98px) {
 	.hidden-md { display: none !important; }
 	.show-md { display: block !important; }
-	:root {
-		--body-font-size: 1em;
-	}
+	
 	.header {
 		min-height: 3.8750rem;
 	}
@@ -852,24 +853,7 @@ body {
 		transform: rotate(-45deg);
 		margin-top: 0.25em;
 	}
-	.swiper-slide img {
-		min-height: 18rem;
-	}
-	.swiper-slide .section__title {
-		font-size: 1.5rem; /* f */
-	}
-	.swiper-slide .nav-link {
-		font-size: 1rem; /* f */
-	}
-	.swiper-slide .column-start {
-		align-items: center;
-		text-align: left;
-	}
-	.swiper-button-next,.swiper-button-prev {
-		--swiper-navigation-size: 1.5em;
-		--swiper-theme-color: var(--white);
-		width: calc(var(--swiper-navigation-size)/ 22 * 30);
-	}
+	
 }
 @media (min-width: 576px) and (max-width: 767.98px) {}
 
@@ -878,22 +862,9 @@ body {
 @media (max-width: 575.98px) {
 	.hidden-sm { display: none !important; }
 	.show-sm { display: block !important; }
-	
-	.btn-md {
-		--font-size: clamp(0.7500em, 1.5vw, 1.0000em);
+	:root {
+		--body-font-size: 1em;
 	}
-	.btn-lg {
-		--font-size: clamp(1em, 3.5vw, 1.3333em);
-	}
-}
-@media (min-width: 480px) and (max-width: 575.98px) { }
-
-/* 초소형 모바일 (세로형) */
-/* X-Small devices (mobile, up to 479.98px) */
-@media (max-width: 479.98px) {
-	.hidden-xs { display: none !important; }
-	.show-xs { display: block !important; }
-	
 	.pc-only { display: none; }
 	.mo-only { display: block; }
 	.features { display: none; }
@@ -909,10 +880,36 @@ body {
 		text-align: center;
 	}
 	.section-block {
-		padding: 42px 26px;
+		padding-block: var(--section-padding-y-mobile);
 	}
+	
+	.btn-md {
+		--font-size: clamp(0.7500em, 1.5vw, 1.0000em);
+	}
+	.btn-lg {
+		--font-size: clamp(1em, 3.5vw, 1.3333em);
+	}
+
+	/* page ------------------------------------------------------- */
+	.bg-tint-violet .section-block {
+		--section-padding-y-mobile: 2.1875em;
+	}
+}
+@media (min-width: 480px) and (max-width: 575.98px) { }
+
+/* 초소형 모바일 (세로형) */
+/* X-Small devices (mobile, up to 479.98px) */
+@media (max-width: 479.98px) {
+	.hidden-xs { display: none !important; }
+	.show-xs { display: block !important; }
+	
+	
+
+
+	
+
 	/* section 텍스트 크기 */
-	.section__title {
+	/* .section__title {
 		font-size: 20px;
 	}
 	.section__title--lg {
@@ -926,60 +923,14 @@ body {
 	}
 	.bg-tint .section__title {
 		font-size: 14px;
-	}
+	} */
 	
 
 
 
 	
-	/* footer */
-	.site-footer { padding: 22px 0 32px; }
-	.site-footer__company { font-size: 18px; }
-	.site-footer__addr { font-size: 16px; line-height: 1.65; }
-	.site-footer__copy { font-size: 14px; }
 
-	/* page : index */
-	/* index 내 slide를 제외한 제일 첫 section */
-	.intro-section { 
-		background: -webkit-linear-gradient(top, var(--white), var(--yellow-200));
-		background: -moz-linear-gradient(top, var(--white), var(--yellow-200));
-		background: linear-gradient(to bottom, var(--white), var(--yellow-200));
-	}
-	.intro-section .section-block > .section-block {
-		background: unset;
-}
-	/* page : culture, about */
-	.bg-img {
-		height: 360px;
-		min-height: 360px;
-		max-height: 500px;
-	}
-
-	.bg-img .section__text--lg {
-		font-size: 14px;
-	}
-	/* page : about */
-	/* history : 연혁 */
-	.history.column-start {
-		align-items: start;
-		text-align: left;
-	}
-	.history-year {
-		font-size: 16px;
-		font-weight: var(--font-weight-bold);
-	}
-	.history-list {
-		font-size: 12px;
-		font-weight: 500;
-	}
-	.history-list .month {
-		font-weight: var(--font-weight-bold);
-		margin-right: 14px;
-	}
-	/* map */
-	.map {
-		height: 360px;
-	}
+	
 }
 
 
