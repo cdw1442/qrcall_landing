@@ -94,7 +94,7 @@
 	
 	/* font base --font- */
 	--font-family-base: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, -apple-system, sans-serif;
-	--font-size-base: 16px;
+	--font-size-base: 20px;
 
 	--font-color-base: var(--gray-800);
 	--font-color-base-rgb: var(--gray-800-rgb);
@@ -143,13 +143,13 @@
 /* 컴포넌트 */
 	/* body font style */
 	--body-font-family: var(--font-family-base);
-	--body-font-size: 0.7500em;
+	--body-font-size: 1rem;
 	--body-font-weight: var(--font-weight-regular);
 	--body-line-height: var(--line-height-lg);
 	--body-font-color: var(--font-color-base);
 	--body-font-color-rgb: var(--font-color-base-rgb);
 	/* layout --layout- */
-	--layout-max-width: 85.1667em;
+	--layout-max-width: 63.8750rem;
 	--layout-padding-y-desktop: var(--padding-base-y);
 	--layout-padding-y-mobile: var(--padding-base-y);
 	--layout-padding-x-desktop: var(--padding-base-x);
