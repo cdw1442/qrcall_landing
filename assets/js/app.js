@@ -167,7 +167,6 @@ function initNavigation() {
 
 
 
-
 // ==============================
 // Swiper 초기화
 // ==============================
@@ -193,36 +192,66 @@ function initSwiper() {
 	}
 }
 
+
+
+// ==============================
+// PC / Mobile 감지 기능
+// ==============================
+function handleFeatureVisibility() {
+	const pcFeatures = document.querySelectorAll(".features-pc");
+	const mobileFeatures = document.querySelectorAll(".features-mobile");
+
+	const isMobileDevice = /Mobi|Android|iPhone/i.test(navigator.userAgent);
+
+	// ✅ 모바일 기기만 모바일 모드로 인식
+	const isMobile = isMobileDevice;
+
+	if (isMobile) {
+		pcFeatures.forEach(el => el.classList.add("hidden"));
+		mobileFeatures.forEach(el => el.classList.remove("hidden"));
+	} else {
+		pcFeatures.forEach(el => el.classList.remove("hidden"));
+		mobileFeatures.forEach(el => el.classList.add("hidden"));
+	}
+}
+
+
+
 // ==============================
 // 라우팅 테이블
 // ==============================
 const routes = {
-	'/': 'tpl-home',
-	'/services/qr-url': 'tpl-services-qrUrl',
-	'/services/custom-page': 'tpl-services-customPage',
-	'/services/contact-options': 'tpl-services-contactOptions',
-	'/services/data-manager': 'tpl-services-dataManager',
-	'/solutions/cs': 'tpl-business-cs',
-	'/solutions/mycar': 'tpl-business-mycar',
-	'/solutions/o4o': 'tpl-business-o4o',
-	'/solutions/operation': 'tpl-business-operation',
-	'/pricing': 'tpl-pricing',
-	'/contact': 'tpl-contact',
-	'/privacy-policy': 'tpl-privacy',
-	'/terms-of-service': 'tpl-terms',
+	"/": "tpl-home",
+	"/services/qr-url": "tpl-services-qrUrl",
+	"/services/custom-page": "tpl-services-customPage",
+	"/services/contact-options": "tpl-services-contactOptions",
+	"/services/data-manager": "tpl-services-dataManager",
+	"/solutions/cs": "tpl-business-cs",
+	"/solutions/mycar": "tpl-business-mycar",
+	"/solutions/o4o": "tpl-business-o4o",
+	"/solutions/operation": "tpl-business-operation",
+	"/pricing": "tpl-pricing",
+	"/contact": "tpl-contact",
+	"/privacy-policy": "tpl-privacy",
+	"/terms-of-service": "tpl-terms",
 };
+
+
 
 // ==============================
 // 라우터 실행
 // ==============================
 function router() {
-	const path = window.location.hash.replace('#', '') || '/';
-	const tplId = routes[path] || routes['/'];
+	const path = window.location.hash.replace("#", "") || "/";
+	const tplId = routes[path] || routes["/"];
 	const tpl = document.getElementById(tplId);
 
 	if (tpl) {
-		document.getElementById('app').innerHTML = tpl.innerHTML;
+		document.getElementById("app").innerHTML = tpl.innerHTML;
 		initSwiper();
+
+		// ✅ 페이지 콘텐츠 주입 후 PC/모바일 표시 처리
+		handleFeatureVisibility();
 
 		// ✅ 라우팅 완료 후 스크롤 맨 위로 이동
 		window.scrollTo({ top: 0, behavior: "smooth" });
@@ -230,21 +259,30 @@ function router() {
 }
 
 
+
 // ==============================
 // 초기화
 // ==============================
-window.addEventListener('hashchange', router);
-window.addEventListener('DOMContentLoaded', () => {
-	// header, footer 주입
-	document.getElementById('header').innerHTML = document.getElementById('tpl-header').innerHTML;
-	document.getElementById('footer').innerHTML = document.getElementById('tpl-footer').innerHTML;
+window.addEventListener("hashchange", router);
+window.addEventListener("DOMContentLoaded", () => {
+	document.getElementById("header").innerHTML = document.getElementById("tpl-header").innerHTML;
+	document.getElementById("footer").innerHTML = document.getElementById("tpl-footer").innerHTML;
 
-	// 라우터 실행
 	router();
 
-	// ✅ header / nav DOM이 주입된 뒤 Navigation 초기화
 	setTimeout(() => {
 		initNavigation();
 	}, 0);
+
+	// ✅ 리사이징 시 모바일/PC 감지 재실행
+	let lastMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";
+
+	window.addEventListener("resize", () => {
+		const currentMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";
+		if (currentMode !== lastMode) {
+			handleFeatureVisibility();
+			lastMode = currentMode;
+		}
+	});
 });
 

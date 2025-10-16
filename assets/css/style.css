@@ -748,10 +748,6 @@ body {
 	max-width: clamp(4.0000rem, 20vw, 7.5000rem);
 }
 
-
-
-
-
 /* 대형 데스크탑 */
 /* XX-Large devices (large desktops, 1200px ~ 1399.98px) */
 @media (max-width: 1399.98px) {
@@ -895,14 +891,15 @@ body {
 /* 작은 모바일 (가로형) */
 /* Small devices (landscape phones, 480px ~ 575.98px) */
 @media (max-width: 575.98px) {
-	.hidden-sm { display: none !important; }
-	.show-sm { display: block !important; }
 	:root {
 		--body-font-size: 1em;
 	}
+
+	.hidden-sm { display: none !important; }
+	.show-sm { display: block !important; }
+	
 	.pc-only { display: none; }
 	.mo-only { display: block; }
-	.features { display: none; }
 
 	/* row, column 정렬 변경 */
 	.row {
@@ -916,8 +913,7 @@ body {
 	}
 	.section-block {
 		padding-block: var(--section-padding-y-mobile);
-	}
-	
+	}	
 	.btn-md {
 		--font-size: clamp(0.7500em, 1.5vw, 1.0000em);
 	}
@@ -943,36 +939,7 @@ body {
 /* X-Small devices (mobile, up to 479.98px) */
 @media (max-width: 479.98px) {
 	.hidden-xs { display: none !important; }
-	.show-xs { display: block !important; }
-	
-	
-
-
-	
-
-	/* section 텍스트 크기 */
-	/* .section__title {
-		font-size: 20px;
-	}
-	.section__title--lg {
-		font-size: 20px;
-	}  
-	.section__text {
-		font-size: 12px;
-	}
-	.section__text--lg {
-		font-size: 20px;
-	}
-	.bg-tint .section__title {
-		font-size: 14px;
-	} */
-	
-
-
-
-	
-
-	
+	.show-xs { display: block !important; }	
 }
 
 
@@ -981,15 +948,9 @@ body {
 ================================== */
 /* 모바일 (터치 전용 기기) */
 @media (pointer: coarse) {
-	.pc-only {
-		display: none;
-	}
-	.mo-only {
-		display: block;
-	}
-	.features {
-		display: none;
-	}
+	.pc-only {display: none;}
+	.mo-only {display: block;}
+	.features-pc {display: none;}
 }
 /* PC (정교한 포인터, 마우스) */
 @media (pointer: fine) {
