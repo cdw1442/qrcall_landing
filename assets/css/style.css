@@ -128,15 +128,16 @@
 
 	/* border --border- */
 	/* shadow --shadow- */
-	--shadow-base: 0 0.5rem 1rem rgba(var(--black-rgb), 0.15);
+	--shadow-base: 0 0.25rem 0.25rem rgba(var(--black-rgb), 0.15);
 
 	/* radius --border-radius- */
-	--border-radius-sm: 4px;
+	--border-radius-sm: 0.2500rem;
+	--border-radius-md: 0.5000rem;
 	--border-radius-lg: 0.7500rem;
 	/* padding --padding- */
 	--padding-base-y: 1.5000em;
 	--padding-base-x: 1.5000em;
-	--padding-base: 2rem;
+	--padding-base: 1.5000em;
 
 
 /* 컴포넌트 */
@@ -350,6 +351,9 @@ body {
 .column-end {
 	align-items: flex-end;
 	text-align: right;
+}
+.image-wrap {
+	position: relative;
 }
 /* section */
 .section {
@@ -701,6 +705,7 @@ body {
 	font-weight: var(--font-weight-bold);
 }
 .externalLink {
+	display: flex;
 	flex-direction: column;
 	gap: 0.9375rem;
 }
@@ -711,6 +716,36 @@ body {
 /* page ------------------------------------------------------- */
 .bg-tint-violet .section-block {
 	--section-padding-y-desktop: 5.8333em;
+}
+.card {
+	display: inline-block;
+	position: absolute;
+	left:0.5rem;
+	bottom: 0.5rem;
+	border-radius: var(--border-radius-sm);
+	background-color: var(--bg-base);
+	box-shadow: var(--shadow-base);
+}
+.card__header {
+	border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0 ;
+	background-color: var(--color-primary);
+}
+.card__title {
+	font-size: 0.7500rem;
+	line-height: var(--line-height-base);
+	font-weight: var(--font-weight-bold);
+	text-align: center;
+	color: var(--font-color-inverse);	
+	padding: calc(var(--padding-base) / 2);
+}
+.card__body {
+	padding: calc(var(--padding-base) / 1.5) calc(var(--padding-base) / 1);
+}
+.card .externalLink {
+	gap: clamp(0.25rem, 1vw, 0.6250rem);
+}
+.card .externalLink img {
+	max-width: clamp(4.0000rem, 20vw, 7.5000rem);
 }
 
 
@@ -894,6 +929,13 @@ body {
 	.bg-tint-violet .section-block {
 		--section-padding-y-mobile: 2.1875em;
 	}
+	.card__title {
+		font-size: 0.6875rem;
+	}
+	.card__body {
+		padding: calc(var(--padding-base) / 3) calc(var(--padding-base) / 2);
+	}
+	
 }
 @media (min-width: 480px) and (max-width: 575.98px) { }
 
