@@ -227,11 +227,10 @@ const routes = {
 	"/services/contact-options": "tpl-services-contactOptions",
 	"/services/data-manager": "tpl-services-dataManager",
 	"/solutions/cs": "tpl-business-cs",
-	"/solutions/mycar": "tpl-business-mycar",
-	"/solutions/o4o": "tpl-business-o4o",
 	"/solutions/operation": "tpl-business-operation",
+	"/solutions/o4o": "tpl-business-o4o",
+	"/solutions/mycar": "tpl-business-mycar",
 	"/pricing": "tpl-pricing",
-	"/contact": "tpl-contact",
 	"/privacy-policy": "tpl-privacy",
 	"/terms-of-service": "tpl-terms",
 };
