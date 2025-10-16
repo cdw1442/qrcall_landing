@@ -32,7 +32,7 @@ function initNavigation() {
 		if (!link || !submenu) return;
 
 		parent.addEventListener("mouseenter", () => {
-			if (window.innerWidth > 768) {
+			if (window.innerWidth > 991) {
 				closeAll();
 				submenu.classList.add("is-open");
 				link.classList.add("is-active");
@@ -41,7 +41,7 @@ function initNavigation() {
 		});
 
 		parent.addEventListener("mouseleave", () => {
-			if (window.innerWidth > 768) {
+			if (window.innerWidth > 991) {
 				submenu.classList.remove("is-open");
 				link.classList.remove("is-active");
 				link.setAttribute("aria-expanded", "false");
@@ -54,7 +54,7 @@ function initNavigation() {
 	// ----------------------------
 	document.querySelectorAll("#mainNavbar .btn_toggle").forEach(btn => {
 		btn.addEventListener("click", (e) => {
-			if (window.innerWidth > 768) return;
+			if (window.innerWidth > 991) return;
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -83,7 +83,7 @@ function initNavigation() {
 	document.querySelectorAll("#mainNavbar > .offcanvas-body > .navbar-nav > .dropdown > ul > li.nav-item > .nav-link")
 		.forEach(headerLink => {
 			headerLink.addEventListener("click", (e) => {
-				if (window.innerWidth <= 768) {
+				if (window.innerWidth <= 991) {
 					const href = headerLink.getAttribute("href");
 					if (href && href.startsWith("#/")) {
 						e.preventDefault();
@@ -101,7 +101,7 @@ function initNavigation() {
 	// ----------------------------
 	document.querySelectorAll("#mainNavbar .dropdown-menu .nav-link").forEach(subLink => {
 		subLink.addEventListener("click", (e) => {
-			if (window.innerWidth <= 768) {
+			if (window.innerWidth <= 991) {
 				const href = subLink.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -120,7 +120,7 @@ function initNavigation() {
 	const brandLogo = document.querySelector(".header__brand a[href='#/']");
 	if (brandLogo) {
 		brandLogo.addEventListener("click", (e) => {
-			if (window.innerWidth <= 768) {
+			if (window.innerWidth <= 991) {
 				const href = brandLogo.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -145,7 +145,7 @@ function initNavigation() {
 	// 외부 클릭 시 드롭다운 닫기 (PC)
 	// ----------------------------
 	document.addEventListener("click", (e) => {
-		if (window.innerWidth > 768 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
+		if (window.innerWidth > 991 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
 			closeAll();
 		}
 	});
@@ -156,7 +156,7 @@ function initNavigation() {
 	let lastWidth = window.innerWidth;
 	window.addEventListener("resize", () => {
 		const currentWidth = window.innerWidth;
-		if ((lastWidth > 768 && currentWidth <= 768) || (lastWidth <= 768 && currentWidth > 768)) {
+		if ((lastWidth > 991 && currentWidth <= 991) || (lastWidth <= 991 && currentWidth > 991)) {
 			closeAll();
 			offcanvas.classList.remove("is-show");
 			document.body.style.overflow = "";

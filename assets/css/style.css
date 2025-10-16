@@ -94,7 +94,7 @@
 	
 	/* font base --font- */
 	--font-family-base: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, -apple-system, sans-serif;
-	--font-size-base: 24px;
+	--font-size-base: clamp(0.75rem 3.5vw 1rem);
 
 	--font-color-base: var(--gray-800);
 	--font-color-base-rgb: var(--gray-800-rgb);
@@ -143,13 +143,13 @@
 /* 컴포넌트 */
 	/* body font style */
 	--body-font-family: var(--font-family-base);
-	--body-font-size: 1rem;
+	--body-font-size: clamp(0.75rem 3.5vw 1rem);
 	--body-font-weight: var(--font-weight-regular);
 	--body-line-height: var(--line-height-lg);
 	--body-font-color: var(--font-color-base);
 	--body-font-color-rgb: var(--font-color-base-rgb);
 	/* layout --layout- */
-	--layout-max-width: 63.8750rem;
+	--layout-max-width: 63.8750em;
 	--layout-padding-y-desktop: var(--padding-base-y);
 	--layout-padding-y-mobile: var(--padding-base-y);
 	--layout-padding-x-desktop: var(--padding-base-x);
@@ -220,6 +220,27 @@ table {
 	border-spacing: 0;
 }
 /* common ------------------------------------------------------- */
+/* 한국어 전용 스타일 */
+:lang(ko) {
+    word-break: keep-all;      /* 한글 단어 중간에서 줄바꿈 방지 */
+    overflow-wrap: break-word; /* 필요시 줄바꿈 허용 */
+}
+/* 영어 전용 스타일 */
+:lang(en) {
+    word-break: normal;        /* 영어 단어는 기본 규칙 */
+    overflow-wrap: anywhere;   /* 긴 영어 단어 줄바꿈 가능 */
+}
+/* 혼합 텍스트 처리를 위한 보조 클래스 */
+.hybrid-text {
+    word-break: keep-all;      /* 기본은 한글 중심 */
+    overflow-wrap: break-word; /* 필요시 줄바꿈 허용 */
+}
+/* 영어 단어 강조 필요시 span 사용 */
+.hybrid-text span.en {
+    word-break: normal;
+    overflow-wrap: anywhere;
+}
+
 img {
 	display: inline-block;
 	width: 100%;
@@ -235,6 +256,7 @@ body {
 	color: var(--body-font-color);
 	background-color: var(--color-bg);
 	-webkit-text-size-adjust: 100%;
+	word-wrap: break-word;
 }
 /* hidden */
 .hidden, .hide {
@@ -534,7 +556,7 @@ body {
 .header {
 	position: relative;
 	width: 100%;
-	min-height: 4.0000em;
+	min-height: 4.2500em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -548,7 +570,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	column-gap: 8.3800em;
+	column-gap: 5.0000em;
 	row-gap: 1em;
 }
 .navbar-toggler {
@@ -568,7 +590,7 @@ body {
 	margin-left: auto;
 }
 .header__brand .brand-img {
-	width: 5.1200em;
+	width: 5.2500em;
 }
 .offcanvas-body {
 	width: 100%;
@@ -598,7 +620,7 @@ body {
 	color: var(--gray-800);
 }
 .nav-link > span {
-	font-size: 1.1667em;
+	font-size: 1em;
 	font-weight: var(--font-weight-medium);
 	line-height: 1.1429em;
 }
@@ -943,10 +965,7 @@ body {
 /* 작은 모바일 (가로형) */
 /* Small devices (landscape phones, 480px ~ 575.98px) */
 @media (max-width: 575.98px) {
-	:root {
-		--body-font-size: 1em;
-	}
-
+	
 	.hidden-sm { display: none !important; }
 	.show-sm { display: block !important; }
 	
