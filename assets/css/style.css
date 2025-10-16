@@ -94,7 +94,7 @@
 	
 	/* font base --font- */
 	--font-family-base: 'Pretendard', 'Apple SD Gothic Neo', 'Segoe UI', system-ui, -apple-system, sans-serif;
-	--font-size-base: 20px;
+	--font-size-base: 24px;
 
 	--font-color-base: var(--gray-800);
 	--font-color-base-rgb: var(--gray-800-rgb);
