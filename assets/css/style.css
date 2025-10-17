@@ -103,12 +103,12 @@
 	--font-size-base: clamp(1rem, 0.5rem + 1vw, 1.125rem); /* 본문 */
 	--font-size-scale-ratio: 1.25; /* 각 단계 간 비율 (1.25 = 25% 증가) */
 
-	--font-size-xs: calc(var(--font-size-base) / var(--font-size-scale-ratio));  /* 작은 글씨 */
-	--font-size-sm: var(--font-size-base);                                       /* 기본(body) */
-	--font-size-md: calc(var(--font-size-base) * var(--font-size-scale-ratio));  /* h6~h5 */
-	--font-size-lg: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 1.25)); /* h4~h3 */
-	--font-size-xl: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 1.5));  /* h2 */
-	--font-size-xxl: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 2));   /* h1 */
+	--font-size-xs: calc(var(--font-size-base) / var(--font-size-scale-ratio));  /* 작은 글씨 14.4/18 12.8/16 */
+	--font-size-sm: var(--font-size-base);                                       /* 기본(body) pC:18 mo:16 */
+	--font-size-md: calc(var(--font-size-base) * var(--font-size-scale-ratio));  /* h6~h5 22.5/18 20/16 */
+	--font-size-lg: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 1.25)); /* h4~h3 28.125/18 25/16 */
+	--font-size-xl: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 1.5));  /* h2  34/18 30/16 */
+	--font-size-xxl: calc(var(--font-size-base) * (var(--font-size-scale-ratio) * 2));   /* h1 45/18 40/16 */
 
 	--font-weight-light: 300;
 	--font-weight-regular: 400;
@@ -353,7 +353,7 @@ X-Small: ~479px
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	gap: 1em;
+	gap: 1.5em;
 }
 .section-block.row {
 	justify-content: center;
@@ -408,22 +408,22 @@ X-Small: ~479px
 	margin: 0 auto;
 }
 .section__title {
-	font-size: 1.4444em;
+	font-size: var(--font-size-lg);
 	line-height: var(--line-height-md);
 	font-weight: var(--font-weight-bold);
 	color: var(--font-color-base);
 }
 .section__title--lg {
-	font-size: 2.0000em;
+	font-size: var(--font-size-xl);
 }
 .section__text {
-	font-size: 1em;
-	line-height: var(--line-height-lg); 
+	font-size: var(--font-size-sm);
+	line-height: var(--line-height-md); 
 	font-weight: var(--font-weight-medium);
 	color: var(--font-color-base);
 }
 .section__text--lg {
-	font-size: 1.1111em;
+	font-size: var(--font-size-md);
 	font-weight: var(--font-weight-semibold);
 }
 .text--primary {
