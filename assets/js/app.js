@@ -232,7 +232,8 @@ const routes = {
 	"/solutions/mycar": "tpl-business-mycar",
 	"/pricing": "tpl-pricing",
 	"/privacy-policy": "tpl-privacy",
-	"/terms-of-service": "tpl-terms",
+	"/terms-of-service": "tpl-terms-service",
+	"/terms-of-location": "tpl-terms-location"
 };
 
 
