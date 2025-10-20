@@ -452,7 +452,7 @@ X-Small: ~479px
 	padding: 0;
 }
 .tag__text {
-	--font-size: 1em;
+	--font-size: 0.8333em;
 	--line-height: var(--line-height-base);
 	--font-weight: var(--font-weight-semibold);
 	--font-color: var(--font-color-inverse);
@@ -834,6 +834,7 @@ X-Small: ~479px
 	gap: 8.8889em;
 }
 .onboarding .column {
+	text-align: left;
 	align-items: flex-start;
 	gap: 0.4444em;
 }
