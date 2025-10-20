@@ -700,7 +700,6 @@ X-Small: ~479px
 .business { background-image: url(../images/icon_business.svg); }
 .marketing { background-image: url(../images/icon_marketing.svg); }
 .parking { background-image: url(../images/icon_parking.svg); }
-
 /* PC hover & JS toggle 공통 */
 .dropdown-menu.is-open {
 	display: flex;
@@ -713,8 +712,61 @@ X-Small: ~479px
 	visibility: visible;
 	transform: translateY(-0.000em);
 }
+/* accordion */
+.accordion {
+	display: block;
+	width: 100%;
 
+}
+.collapse:not(.is-show) {
+	display: none;
+}
+.accordion-item {
+	border-bottom: 1px solid var(--gray-200);
+}
+.accordion-button {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.0000em;
+	font-weight: var(--font-weight-semibold);
+	line-height: var(--line-height-sm);
+	color: var(--gray-800);
+	text-align: left;
+	transition: opacity .2s ease, transform .2s ease;
+	padding: 0.9375rem 1.1111em;
+	overflow-anchor: none;
+}
+.accordion-button:after {
+	display: inline-block;
+	width: 0.5em;
+	height: 0.5em;
+	content: " ";
+	border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	transform: translateX(-0.25em);
+	transform: translateY(-0.25em);
+	transform: rotate(135deg);
+	transition: transform 0.25s;	
+}
+.accordion-button:not(.collapsed):after {
+	transform: rotate(-45deg);
+	margin-top: 0.25em;
+}
 
+.accordion-collapse {
+	padding: 0.9375rem 1.1111em;
+}
+.accordion-body {
+	font-size: 1.0000em;
+	font-weight: var(--font-weight-medium);
+	line-height: var(--line-height-sm);
+	color: var(--gray-800);
+	text-align: left;
+	padding: 1.1111em;
+}
 /* Footer */
 .footer {
 	position: relative;

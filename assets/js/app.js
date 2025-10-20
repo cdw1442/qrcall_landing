@@ -164,6 +164,42 @@ function initNavigation() {
 	});
 }
 
+// ==============================
+// Accordion (공통)
+// ==============================
+function initAccordion() {
+	const accordions = document.querySelectorAll(".accordion");
+
+	accordions.forEach((accordion) => {
+		const items = accordion.querySelectorAll(".accordion-item");
+
+		items.forEach((item) => {
+			const button = item.querySelector(".accordion-button");
+			const collapse = item.querySelector(".accordion-collapse");
+
+			if (!button || !collapse) return;
+
+			button.addEventListener("click", () => {
+				const isOpen = !button.classList.contains("collapsed");
+
+				// 현재 클릭한 아코디언 항목이 열려 있으면 닫기
+				if (isOpen) {
+					button.classList.add("collapsed");
+					button.setAttribute("aria-expanded", "false");
+					collapse.classList.remove("is-show");
+					collapse.classList.add("collapse");
+				} else {
+					// 닫힌 항목이면 열기
+					button.classList.remove("collapsed");
+					button.setAttribute("aria-expanded", "true");
+					collapse.classList.add("is-show");
+					collapse.classList.remove("collapse");
+				}
+			});
+		});
+	});
+}
+
 
 
 // ==============================
@@ -248,6 +284,9 @@ function router() {
 		initSwiper();
 		handleFeatureVisibility();
 		window.scrollTo({ top: 0, behavior: "smooth" });
+
+		// 아코디언 초기화
+		initAccordion();
 	}
 }
 
