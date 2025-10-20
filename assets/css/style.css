@@ -274,6 +274,9 @@ body {
 	-webkit-text-size-adjust: 100%;
 	word-wrap: break-word;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 /* hidden */
 .hidden, .hide {
 	display: none!important;
@@ -704,7 +707,6 @@ X-Small: ~479px
 	flex-direction: column;
 	row-gap: 0.2500em;
 }
-
 /* dropdown-menu : Mobile toggle*/
 .dropdown-menu.is-open {
 	opacity: 1;
@@ -897,7 +899,7 @@ X-Small: ~479px
 		flex-direction: column;
 	}
 	.offcanvas {
-		/* visibility: hidden; */
+		visibility: hidden;
 		width: 100%;
 		max-width: 100%;
 		position: fixed;
@@ -912,7 +914,7 @@ X-Small: ~479px
 		transition: transform .2s ease-in-out;	
 	}
 	.offcanvas.is-show {
-		/* visibility: visible; */
+		visibility: visible;
 		transform: none;
 		overflow: auto;
 	}
@@ -928,15 +930,6 @@ X-Small: ~479px
 	}
 	.dropdown:first-child > ul:not(.dropdown-menu) {
 		border-top: 0 solid rgba(var(--black-rgb), 0.15);
-	}	
-	.dropdown > ul:not(.dropdown-menu) .nav-item {
-		flex: 1 auto;
-		width: 100%;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		color: var(--gray-800);
-		padding: 0.9375em;
 	}
 	.nav-link > span {
 		font-size: 1.2500em;		
@@ -959,15 +952,16 @@ X-Small: ~479px
 		font-size: 1.12500em;
 		line-height: var(--line-height-md);
 	}
-	.dropdown:has(.dropdown-menu) .btn_toggle {
-		flex-grow: 0;
-		display: flex;
-		justify-content: center;
+	.dropdown:not(.dropdown-menu) > ul:not(.dropdown-menu) .nav-item .nav-link {
+		flex: 1 auto;
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
 		align-items: center;
-		width: 1.3750em;
-		height: 1.3750em;
+		color: var(--gray-800);
+		padding: 0.9375em;
 	}
-	.btn_toggle:after {
+	.dropdown:has(.dropdown-menu) > ul:not(.dropdown-menu) .nav-item .nav-link:after {
 		display: inline-block;
 		width: 0.5em;
 		height: 0.5em;
@@ -979,7 +973,7 @@ X-Small: ~479px
 		transform: rotate(135deg);
 		transition: transform 0.25s;
 	}
-	.btn_toggle.is-active:after {
+	.dropdown:has(.dropdown-menu) > ul:not(.dropdown-menu) .nav-item .nav-link.is-active:after {
 		transform: rotate(-45deg);
 		margin-top: 0.25em;
 	}

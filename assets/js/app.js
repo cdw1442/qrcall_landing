@@ -2,10 +2,9 @@
 // Navigation 
 // ==============================
 function initNavigation() {
-	const dropdownParents = document.querySelectorAll("#mainNavbar > .offcanvas-body > .navbar-nav > .dropdown");
-	const navbarToggler = document.querySelector(".navbar-toggler");
 	const offcanvas = document.querySelector("#mainNavbar");
-	if (!navbarToggler || !offcanvas) return;
+	const navbarToggler = document.querySelector(".navbar-toggler");
+	if (!offcanvas || !navbarToggler) return;
 
 	// ----------------------------
 	// 공통: 닫기 헬퍼
@@ -23,15 +22,15 @@ function initNavigation() {
 	};
 
 	// ----------------------------
-	// PC hover 처리
+	// ✅ PC hover 처리 (pointerenter/pointerleave 안정화)
 	// ----------------------------
-	dropdownParents.forEach(parent => {
+	document.querySelectorAll("#mainNavbar > .offcanvas-body > .navbar-nav > .dropdown").forEach(parent => {
 		const headerItem = parent.querySelector(":scope > ul > li.nav-item");
 		const link = headerItem ? headerItem.querySelector(".nav-link") : null;
 		const submenu = parent.querySelector(".dropdown-menu");
 		if (!link || !submenu) return;
 
-		parent.addEventListener("mouseenter", () => {
+		parent.addEventListener("pointerenter", () => {
 			if (window.innerWidth > 991) {
 				closeAll();
 				submenu.classList.add("is-open");
@@ -40,7 +39,7 @@ function initNavigation() {
 			}
 		});
 
-		parent.addEventListener("mouseleave", () => {
+		parent.addEventListener("pointerleave", () => {
 			if (window.innerWidth > 991) {
 				submenu.classList.remove("is-open");
 				link.classList.remove("is-active");
@@ -50,51 +49,51 @@ function initNavigation() {
 	});
 
 	// ----------------------------
-	// 모바일: btn_toggle 클릭으로 하위 메뉴 토글
+	// ✅ 모바일 1depth 메뉴 클릭 (dropdown/비드롭다운 open/active)
 	// ----------------------------
-	document.querySelectorAll("#mainNavbar .btn_toggle").forEach(btn => {
-		btn.addEventListener("click", (e) => {
-			if (window.innerWidth > 991) return;
-			e.preventDefault();
-			e.stopPropagation();
+	document.querySelectorAll("#mainNavbar > .offcanvas-body > .navbar-nav > .dropdown > ul > li.nav-item > .nav-link")
+	.forEach((link) => {
+		link.addEventListener("click", (e) => {
+			const parentItem = link.closest(".nav-item");
+			const parentDropdown = parentItem.closest(".dropdown");
+			const submenu = parentDropdown.querySelector(".dropdown-menu");
 
-			const headerItem = btn.closest(".nav-item");
-			const parentDropdown = headerItem?.closest(".dropdown");
-			const submenu = parentDropdown?.querySelector(".dropdown-menu");
-			const headerLink = headerItem?.querySelector(".nav-link");
-			if (!submenu) return;
+			if (window.innerWidth <= 991) {
+				if (submenu) {
+					e.preventDefault();
+					const isOpen = submenu.classList.contains("is-open");
 
-			const isOpen = submenu.classList.contains("is-open");
-			closeAll();
+					// 다른 메뉴 닫기
+					document.querySelectorAll("#mainNavbar .dropdown").forEach((item) => {
+						const s = item.querySelector(".dropdown-menu");
+						const l = item.querySelector(":scope > ul > li.nav-item > .nav-link");
+						s?.classList.remove("is-open");
+						l?.classList.remove("is-active");
+						l?.setAttribute("aria-expanded", "false");
+					});
 
-			if (!isOpen) {
-				submenu.classList.add("is-open");
-				headerLink?.classList.add("is-active");
-				headerLink?.setAttribute("aria-expanded", "true");
-				btn.classList.add("is-active");
-				btn.setAttribute("aria-expanded", "true");
+					// 현재 메뉴 토글
+					if (isOpen) {
+						submenu.classList.remove("is-open");
+						link.classList.remove("is-active");
+						link.setAttribute("aria-expanded", "false");
+					} else {
+						submenu.classList.add("is-open");
+						link.classList.add("is-active");
+						link.setAttribute("aria-expanded", "true");
+					}
+
+					// 오프캔버스 유지 + 스크롤 막기
+					offcanvas.classList.add("is-show");
+					document.body.classList.add("no-scroll");
+				} else {
+					// dropdown 없는 메뉴 → 오프캔버스 닫기 + 스크롤 복원
+					offcanvas.classList.remove("is-show");
+					document.body.classList.remove("no-scroll");
+				}
 			}
 		});
 	});
-
-	// ----------------------------
-	// 모바일: 1depth 링크 클릭 → 페이지 이동 + 오프캔버스 닫기
-	// ----------------------------
-	document.querySelectorAll("#mainNavbar > .offcanvas-body > .navbar-nav > .dropdown > ul > li.nav-item > .nav-link")
-		.forEach(headerLink => {
-			headerLink.addEventListener("click", (e) => {
-				if (window.innerWidth <= 991) {
-					const href = headerLink.getAttribute("href");
-					if (href && href.startsWith("#/")) {
-						e.preventDefault();
-						window.location.hash = href;
-						closeAll();
-						offcanvas.classList.remove("is-show");
-						document.body.style.overflow = "";
-					}
-				}
-			});
-		});
 
 	// ----------------------------
 	// 하위 메뉴(nav-link) 클릭 → 페이지 이동 + 닫기
@@ -109,7 +108,7 @@ function initNavigation() {
 				}
 				closeAll();
 				offcanvas.classList.remove("is-show");
-				document.body.style.overflow = "";
+				document.body.classList.remove("no-scroll");
 			}
 		});
 	});
@@ -128,7 +127,7 @@ function initNavigation() {
 				}
 				closeAll();
 				offcanvas.classList.remove("is-show");
-				document.body.style.overflow = "";
+				document.body.classList.remove("no-scroll");
 			}
 		});
 	}
@@ -137,8 +136,8 @@ function initNavigation() {
 	// 햄버거 토글
 	// ----------------------------
 	navbarToggler.addEventListener("click", () => {
-		offcanvas.classList.toggle("is-show");
-		document.body.style.overflow = offcanvas.classList.contains("is-show") ? "hidden" : "";
+		const isOpen = offcanvas.classList.toggle("is-show");
+		document.body.classList.toggle("no-scroll", isOpen);
 	});
 
 	// ----------------------------
@@ -159,7 +158,7 @@ function initNavigation() {
 		if ((lastWidth > 991 && currentWidth <= 991) || (lastWidth <= 991 && currentWidth > 991)) {
 			closeAll();
 			offcanvas.classList.remove("is-show");
-			document.body.style.overflow = "";
+			document.body.classList.remove("no-scroll");
 		}
 		lastWidth = currentWidth;
 	});
@@ -202,8 +201,6 @@ function handleFeatureVisibility() {
 	const mobileFeatures = document.querySelectorAll(".features-mobile");
 
 	const isMobileDevice = /Mobi|Android|iPhone/i.test(navigator.userAgent);
-
-	// ✅ 모바일 기기만 모바일 모드로 인식
 	const isMobile = isMobileDevice;
 
 	if (isMobile) {
@@ -249,11 +246,7 @@ function router() {
 	if (tpl) {
 		document.getElementById("app").innerHTML = tpl.innerHTML;
 		initSwiper();
-
-		// ✅ 페이지 콘텐츠 주입 후 PC/모바일 표시 처리
 		handleFeatureVisibility();
-
-		// ✅ 라우팅 완료 후 스크롤 맨 위로 이동
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	}
 }
@@ -265,18 +258,23 @@ function router() {
 // ==============================
 window.addEventListener("hashchange", router);
 window.addEventListener("DOMContentLoaded", () => {
-	document.getElementById("header").innerHTML = document.getElementById("tpl-header").innerHTML;
-	document.getElementById("footer").innerHTML = document.getElementById("tpl-footer").innerHTML;
+	const headerTpl = document.getElementById("tpl-header");
+	const footerTpl = document.getElementById("tpl-footer");
+
+	if (headerTpl && footerTpl) {
+		document.getElementById("header").innerHTML = headerTpl.innerHTML;
+		document.getElementById("footer").innerHTML = footerTpl.innerHTML;
+	}
 
 	router();
 
-	setTimeout(() => {
+	// 헤더 주입 후 initNavigation 실행
+	requestAnimationFrame(() => {
 		initNavigation();
-	}, 0);
+	});
 
 	// ✅ 리사이징 시 모바일/PC 감지 재실행
 	let lastMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";
-
 	window.addEventListener("resize", () => {
 		const currentMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";
 		if (currentMode !== lastMode) {
@@ -285,4 +283,3 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 });
-
