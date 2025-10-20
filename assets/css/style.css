@@ -615,7 +615,7 @@ X-Small: ~479px
 .navbar-nav {
 	display: flex;
 	align-items: center;
-	column-gap: 4.4167em;
+	column-gap: 3.3333em;
 }
 .nav-item {
 	flex: 1 auto;
@@ -754,8 +754,10 @@ X-Small: ~479px
 }
 .footer__info > * {
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: 0.6250rem;
-	font-size: 0.8750rem;
+	row-gap: 0.2500rem;
+	font-size: 0.7222em;
 	line-height: 1.2;
 }
 .footer__info strong {
@@ -875,6 +877,7 @@ X-Small: ~479px
 	.hidden-md { display: none !important; }
 	.show-md { display: block !important; }
 	.pc-only { display: none; }
+	.mo-only { display: block; }
 
 	.header {
 		min-height: 3.8750rem;
@@ -989,8 +992,6 @@ X-Small: ~479px
 	.hidden-sm { display: none !important; }
 	.show-sm { display: block !important; }
 	
-	.pc-only { display: none; }
-	.mo-only { display: block; }
 
 	/* row, column 정렬 변경 */
 	.row {
