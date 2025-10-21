@@ -52,10 +52,10 @@
 		</div>
 		<div class="header__content">
 			<div class="control">
-				<a class="btn btn-sm" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
+				<a class="btn btn-sm features-pc" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
 					로그인
 				</a>
-				<a class="btn btn-sm btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank" role="button" aria-label="도입문의">
+				<a class="btn btn-sm btn-primary features-pc" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank" role="button" aria-label="도입문의">
 					도입문의
 				</a>
 			</div>
@@ -78,7 +78,7 @@
 						<li class="dropdown menu-services">
 							<ul>
 								<li class="nav-item">
-									<a class="nav-link" role="button" aria-label="서브메뉴 열기"><span>서비스 소개</span></a>
+									<a class="nav-link" role="button" aria-label="서브메뉴 열기"><span>서비스 소개</span><i class="icon collap"></i></a>
 									<!-- <button type="button" class="btn_toggle" aria-label="서브메뉴 열기" ></button> -->
 								</li>
 							</ul>
@@ -100,7 +100,7 @@
 						<li class="dropdown menu-solutions">
 							<ul>
 								<li class="nav-item">
-									<a class="nav-link" role="button" aria-label="서브메뉴 열기"><span>솔루션</span></a>
+									<a class="nav-link" role="button" aria-label="서브메뉴 열기"><span>솔루션</span><i class="icon collap"></i></a>
 									<!-- <button type="button" class="btn_toggle" aria-label="서브메뉴 열기" ></button> -->
 								</li>
 							</ul>
@@ -126,7 +126,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown menu-contact mo-only">
+						<li class="dropdown menu-contact features-mobile">
 							<ul>
 								<li class="nav-item">
 									<a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank"><span>도입문의</span></a>									
@@ -341,11 +341,6 @@
 						onclick="location.href='https://studio.dev.qrcall.kr/studio/cms/login'">
 						무료로 시작하기
 				</button>
-				<div class="text-wrap column features-mobile hidden">
-					<p class="section__text text--gray">
-						*QRcall 포탈 서비스는 PC 환경에서만 이용 가능합니다.
-					</p>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -1104,21 +1099,19 @@
 						현재 비즈니스에 필요한 만큼만 사용하세요!
 					</p>
 				</div>
-			</div>
 			
-			<div class="column">
 				<div class="table-wrap column" tabindex="0" role="region" aria-label="가격 비교 테이블">
 					<h2 class="visually-hidden">가격 비교표</h2>
 					<table class="pricing-table">
 						<caption class="visually-hidden">QRcall 서비스 요금제별 기능 비교표</caption>
-						<colgroup>
+						<!-- <colgroup>
 							<col style="width:20%">
 							<col style="width:15%">
 							<col style="width:15%">
 							<col style="width:15%">
 							<col style="width:15%">
 							<col style="width:20%">
-						</colgroup>
+						</colgroup> -->
 						<thead>
 							<tr>
 								<th scope="col"><span class="visually-hidden">항목</span></th>
@@ -1204,8 +1197,8 @@
 								<th scope="row">Custom URL 사용</th>
 								<td>-</td>
 								<td>-</td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
@@ -1233,8 +1226,8 @@
 								<th scope="row">음성 안내 사용</th>
 								<td>-</td>
 								<td>-</td>
-								<td><span class="check-icon">✔</span></td>
-								<td><span class="check-icon">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 
@@ -1323,58 +1316,58 @@
 							</tr>
 							<tr>
 								<th scope="row">QR 코드 스캔 횟수</th>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">URL 유입 횟수</th>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">페이지 체류 시간</th>
 								<td>-</td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">버튼 클릭 수</th>
 								<td>-</td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">통화 연결 횟수</th>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">통화 연결 시간</th>
 								<td>-</td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 							<tr>
 								<th scope="row">메세지 연결 횟수</th>
 								<td>-</td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
-								<td><span class="check-icon" aria-label="지원">✔</span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
+								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
 						</tbody>
@@ -1401,6 +1394,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							QRcall은 어떤 서비스인가요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1413,6 +1407,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							모바일 페이지는 어떤 용도로 사용할 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1425,6 +1420,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							모바일 페이지는 몇 개까지 만들 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1437,6 +1433,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							QR 코드와 Short URL은 어떤 용도로 사용 할 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1449,6 +1446,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							QR 코드를 수정할 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1461,6 +1459,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							QR 코드 디자인을 변경할 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">
@@ -1473,6 +1472,7 @@
 					<h2 class="accordion-header">
 						<button type="button" class="accordion-button collapsed" aria-expanded="false">
 							Short URL을 수정할 수 있나요?
+							<i class="icon collap"></i>
 						</button>
 					</h2>
 					<div class="accordion-collapse collapse">

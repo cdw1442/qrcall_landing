@@ -31,7 +31,7 @@ function initNavigation() {
 		if (!link || !submenu) return;
 
 		parent.addEventListener("pointerenter", () => {
-			if (window.innerWidth > 991) {
+			if (window.innerWidth > 768) {
 				closeAll();
 				submenu.classList.add("is-open");
 				link.classList.add("is-active");
@@ -40,7 +40,7 @@ function initNavigation() {
 		});
 
 		parent.addEventListener("pointerleave", () => {
-			if (window.innerWidth > 991) {
+			if (window.innerWidth > 768) {
 				submenu.classList.remove("is-open");
 				link.classList.remove("is-active");
 				link.setAttribute("aria-expanded", "false");
@@ -58,7 +58,7 @@ function initNavigation() {
 			const parentDropdown = parentItem.closest(".dropdown");
 			const submenu = parentDropdown.querySelector(".dropdown-menu");
 
-			if (window.innerWidth <= 991) {
+			if (window.innerWidth <= 768) {
 				if (submenu) {
 					e.preventDefault();
 					const isOpen = submenu.classList.contains("is-open");
@@ -100,7 +100,7 @@ function initNavigation() {
 	// ----------------------------
 	document.querySelectorAll("#mainNavbar .dropdown-menu .nav-link").forEach(subLink => {
 		subLink.addEventListener("click", (e) => {
-			if (window.innerWidth <= 991) {
+			if (window.innerWidth <= 768) {
 				const href = subLink.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -119,7 +119,7 @@ function initNavigation() {
 	const brandLogo = document.querySelector(".header__brand a[href='#/']");
 	if (brandLogo) {
 		brandLogo.addEventListener("click", (e) => {
-			if (window.innerWidth <= 991) {
+			if (window.innerWidth <= 768) {
 				const href = brandLogo.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -144,7 +144,7 @@ function initNavigation() {
 	// 외부 클릭 시 드롭다운 닫기 (PC)
 	// ----------------------------
 	document.addEventListener("click", (e) => {
-		if (window.innerWidth > 991 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
+		if (window.innerWidth > 768 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
 			closeAll();
 		}
 	});
@@ -155,7 +155,7 @@ function initNavigation() {
 	let lastWidth = window.innerWidth;
 	window.addEventListener("resize", () => {
 		const currentWidth = window.innerWidth;
-		if ((lastWidth > 991 && currentWidth <= 991) || (lastWidth <= 991 && currentWidth > 991)) {
+		if ((lastWidth > 768 && currentWidth <= 768) || (lastWidth <= 768 && currentWidth > 768)) {
 			closeAll();
 			offcanvas.classList.remove("is-show");
 			document.body.classList.remove("no-scroll");
