@@ -411,7 +411,7 @@ X-Small: ~479px
 	margin: 0 auto;
 }
 .section__title {
-	font-size: var(--font-size-lg);
+	font-size: var(--font-size-md);
 	line-height: var(--line-height-md);
 	font-weight: var(--font-weight-bold);
 	color: var(--font-color-base);
@@ -498,6 +498,66 @@ X-Small: ~479px
 .badge--line {
 	--bg-color: transparent;
 	--font-color: var(--font-color-primary);
+}
+/* table */
+.table-wrap {
+	width: 100%;
+	overflow-x: auto;
+	/* -webkit-overflow-scrolling: touch; */
+	border-radius: 0.5rem;
+}
+table {
+	width: 100%;
+	table-layout: fixed;
+	text-align: center;
+}
+th,
+td {
+	--font-size: 1rem;
+	--font-color: var(--font-color-base);
+	--border-color: var(--gray-200);
+	font-size: var(--font-size);
+	color: var(--font-color);
+	font-weight: var(--font-weight-medium);
+	padding: 1rem;
+
+	border-bottom: 1px solid var(--border-color);
+}
+th[colspan] {
+	--font-size: 1.2rem;
+	--border-color: transparent;
+	font-weight: var(--font-weight-semibold);
+	text-align: left;
+}
+th[scope="row"] {
+	text-align: left;
+	font-weight: var(--font-weight-medium);
+}
+thead th {
+	--bg-color: var(--color-primary);
+	--font-size: 1.2rem;
+	--font-color: var(--font-color-inverse);
+	background-color: var(--bg-color);
+	color: var(--font-color);
+	font-weight: var(--font-weight-medium);
+}
+.option-badge {
+	--font-size: 0.8333rem;
+	--font-color: var(--font-color-base);
+	/* --background-color: var(--bg-tint-primary); */
+	display: inline-block;
+	/* background-color: var(--background-color); */
+	font-size: var(--font-size);
+	color: var(--font-color);
+	/* border-radius: 0.25rem; */
+}
+.check-icon {
+	--font-size: 1.2rem;
+	--font-color: var(--font-color-primary);
+	
+	font-weight: var(--font-weight-medium);
+	font-size: var(--font-size);
+	color: var(--font-color);
 }
 
 /* button */
@@ -900,6 +960,11 @@ X-Small: ~479px
 	font-size: var(--font-size-sm);
 	line-height: var(--line-height-md);
 	font-weight: var(--font-weight-bold);
+}
+.pricing-card > .column,
+.pricing-table > .column {
+	width: 100%;
+
 }
 
 /* 대형 데스크탑 */
