@@ -513,7 +513,7 @@ table {
 }
 th,
 td {
-	--font-size: 0.6250rem;
+	--font-size: 0.7528em;
 	--font-color: var(--font-color-base);
 	--border-width: 1px;
 	--border-style: solid;
@@ -526,7 +526,7 @@ td {
 	font-weight: var(--font-weight-medium);
 	border-bottom: var(--border-width) var(--border-style) var(--border-color);
 	background-color: var(--bg-color);
-	padding: 0.6875rem;
+	padding: 0.6875rem 0.5vw;
 	vertical-align: middle;
 }
 thead th {
@@ -538,7 +538,7 @@ tbody th {
 	text-align: left;
 }
 th[colspan] {
-	--font-size: 0.8469rem;
+	--font-size: 0.8333em;
 	--border-width: 0;
 	font-weight: var(--font-weight-semibold);	
 	padding: 0.7500rem 0.7380em;
@@ -547,14 +547,14 @@ tbody tr:not(:first-child) th[colspan] {
 	padding-top: 1.8750rem;
 }
 th[scope="row"] {
-	padding: 0.6875rem 3.8000em;
+	padding: 0.6875rem 2vw;
 }
 tbody tr:hover th:not(th[colspan]),
 tbody tr:hover td {
 	--bg-color: var(--bg-tint-primary);
 }
 .option-badge {
-	--font-size: 0.4375rem;
+	--font-size: 0.8333em;
 	display: inline-block;
 	font-size: var(--font-size);
 }
@@ -739,7 +739,7 @@ tbody tr:hover td {
 	display: flex;
 	align-items: center;
 	gap: 0.7500em;	
-	padding-right: 4.5000em;
+	padding-right: 2.0000em;
 	margin-left: auto;
 }
 .header__brand .brand-img {
@@ -765,6 +765,7 @@ tbody tr:hover td {
 	width: 100%;
 	display: flex;
 	align-items: center;
+	gap: 0.25em;
 	color: var(--gray-800);
 	padding: 0.2500em;
 	cursor: pointer;
@@ -773,6 +774,7 @@ tbody tr:hover td {
 	color: var(--gray-800);
 }
 .nav-link > span {
+	flex: auto;
 	font-size: 1.1250rem;
 	font-weight: var(--font-weight-medium);
 	line-height: var(--line-height-sm);
@@ -988,6 +990,7 @@ tbody tr:hover td {
 
 }
 
+
 /* 대형 데스크탑 */
 /* XX-Large devices (large desktops, 1200px ~ 1399.98px) */
 @media (max-width: 1399.98px) {
@@ -1017,6 +1020,7 @@ tbody tr:hover td {
 @media (max-width: 767.98px) {
 	.hidden-md { display: none !important; }
 	.show-md { display: block !important; }
+	
 	.pc-only { display: none; }
 	.mo-only { display: block; }
 
@@ -1099,6 +1103,18 @@ tbody tr:hover td {
 		color: var(--gray-800);
 		padding: 0.9375em;
 	}
+	/* page ------------------------------------------------------- */
+	/* 가격 비교표 */
+	.price-comparison tbody th {
+		text-align: center;
+	}
+	.price-comparison tr th:last-child,
+	.price-comparison tr td:last-child {
+		display: none;
+	}	
+	.price-comparison .section-row {
+		display: none;
+	}
 }
 @media (min-width: 576px) and (max-width: 767.98px) {}
 
@@ -1106,8 +1122,7 @@ tbody tr:hover td {
 /* Small devices (landscape phones, 480px ~ 575.98px) */
 @media (max-width: 575.98px) {	
 	.hidden-sm { display: none !important; }
-	.show-sm { display: block !important; }
-	
+	.show-sm { display: block !important; }	
 
 	/* row, column 정렬 변경 */
 	.row {
@@ -1119,16 +1134,12 @@ tbody tr:hover td {
 		align-items: center;
 		text-align: center;
 	}
-
-	/* .btn-md {
-		--font-size: clamp(0.7500em, 1.5vw, 1.0000em);
+	/* table */
+	th, td {
+		padding: 0.6875rem 0.75vw;
 	}
-	.btn-lg {
-		--font-size: clamp(1em, 3.5vw, 1.3333em);
-	} */
 
 	/* page ------------------------------------------------------- */
-
 	.card__body {
 		padding: calc(var(--padding-base) / 3) calc(var(--padding-base) / 2);
 	}
@@ -1149,9 +1160,105 @@ tbody tr:hover td {
 ================================== */
 /* 모바일 (터치 전용 기기) */
 @media (pointer: coarse) {
-	.pc-only {display: none;}
-	.mo-only {display: block;}
 	.features-pc {display: none;}
+	.pc-only { display: none; }
+	.mo-only { display: block; }
+
+	.header {
+		min-height: 3.8750rem;
+	}
+	.header__inner {
+		column-gap: 1rem;
+	}
+	.control {
+		display: none;
+	}
+	.navbar-toggler {
+		display: block;
+	}
+	.navbar-nav {
+		width: 100%;
+		flex-direction: column;
+	}
+	.offcanvas {
+		visibility: hidden;
+		width: 100%;
+		max-width: 100%;
+		position: fixed;
+		top: 3.8750em;
+		right: 0;
+		bottom: 0;
+		transform: translateX(100%);
+		background-color: var(--white);
+		padding: 0.6250em 0;
+		display: flex;
+		flex-direction: column;		
+		transition: transform .2s ease-in-out;	
+	}
+	.offcanvas.is-show {
+		visibility: visible;
+		transform: none;
+		overflow: auto;
+	}
+	.offcanvas.is-show .offcanvas-body {
+		padding: 0 1.2500em;
+	}
+	.dropdown {
+		width: 100%;
+	}
+	.dropdown > ul:not(.dropdown-menu) {
+		width: 100%;
+		border-top: 1px solid rgba(var(--black-rgb), 0.15);
+	}
+	.dropdown:first-child > ul:not(.dropdown-menu) {
+		border-top: 0 solid rgba(var(--black-rgb), 0.15);
+	}
+	.nav-link > span {
+		font-size: 1.2500em;		
+	}
+	.dropdown-menu {
+		position: static;
+		min-width: unset;
+		border: none;
+		background-color: var(--gray-100);
+		padding: 0.9375em 0;
+		box-shadow: none ;
+		margin: 0 1rem 1rem;
+		row-gap: 0.500em;
+	}
+	.nav-item .icon {
+		width: 1.25em;
+		height: 1.25em;
+	}
+	.dropdown-menu .nav-link > span  {
+		font-size: 1.12500em;
+		line-height: var(--line-height-md);
+	}
+	.dropdown:not(.dropdown-menu) > ul:not(.dropdown-menu) .nav-item .nav-link {
+		flex: 1 auto;
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		color: var(--gray-800);
+		padding: 0.9375em;
+	}
+	/* page ------------------------------------------------------- */
+	/* 가격 비교표 */
+	.price-comparison tbody th {
+		text-align: center;
+	}
+	.price-comparison tr th:last-child,
+	.price-comparison tr td:last-child {
+		display: none;
+	}	
+	.price-comparison .section-row {
+		display: none;
+	}
+	.price-comparison  tbody tr:hover th:not(th[colspan]),
+	.price-comparison tbody tr:hover td {
+		--bg-color: var(--bg-base);
+	}
 }
 /* PC (정교한 포인터, 마우스) */
 @media (pointer: fine) {

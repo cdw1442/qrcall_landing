@@ -52,10 +52,10 @@
 		</div>
 		<div class="header__content">
 			<div class="control">
-				<a class="btn btn-sm features-pc" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
+				<a class="btn btn-sm" href="https://studio.dev.qrcall.kr/studio/cms/login" role="button" aria-label="로그인">
 					로그인
 				</a>
-				<a class="btn btn-sm btn-primary features-pc" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank" role="button" aria-label="도입문의">
+				<a class="btn btn-sm btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank" role="button" aria-label="도입문의">
 					도입문의
 				</a>
 			</div>
@@ -126,7 +126,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown menu-contact features-mobile">
+						<li class="dropdown menu-contact mo-only">
 							<ul>
 								<li class="nav-item">
 									<a class="nav-link" href="https://docs.google.com/forms/d/e/1FAIpQLSeQt2P3VX26LMEfijE50y0SeDewtBkTgms8DyKhJreZz0XQ7w/viewform?usp=sf_link" target="_blank"><span>도입문의</span></a>									
@@ -1100,18 +1100,18 @@
 					</p>
 				</div>
 			
-				<div class="table-wrap column" tabindex="0" role="region" aria-label="가격 비교 테이블">
+				<div class="table-wrap column" tabindex="0" role="region" aria-label="가격 비교표">
 					<h2 class="visually-hidden">가격 비교표</h2>
-					<table class="pricing-table">
+					<table class="price-comparison">
 						<caption class="visually-hidden">QRcall 서비스 요금제별 기능 비교표</caption>
-						<!-- <colgroup>
+						<colgroup>
 							<col style="width:20%">
 							<col style="width:15%">
 							<col style="width:15%">
 							<col style="width:15%">
 							<col style="width:15%">
-							<col style="width:20%">
-						</colgroup> -->
+							<col style="width:20%" class="features-pc">
+						</colgroup>
 						<thead>
 							<tr>
 								<th scope="col"><span class="visually-hidden">항목</span></th>
@@ -1127,7 +1127,7 @@
 							<tr class="section-row">
 								<th colspan="6" scope="colgroup">계정</th>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">관리자 계정</th>
 								<td>1개</td>
 								<td>1개</td>
@@ -1156,7 +1156,7 @@
 								<td>90개</td>
 								<td>1,000원 <span class="option-badge">1명당/월</span></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">스캔 가능 횟수</th>
 								<td>무제한 가능</td>
 								<td>무제한 가능</td>
@@ -1164,7 +1164,7 @@
 								<td>무제한 가능</td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">QR 코드 수명</th>
 								<td>30일</td>
 								<td>구독 종료일까지</td>
@@ -1177,7 +1177,7 @@
 							<tr class="section-row">
 								<th colspan="6" scope="colgroup">URL</th>
 							</tr>
-							<tr>
+							<tr >
 								<th scope="row">기본 Short URL 수량</th>
 								<td>1개</td>
 								<td>30개</td>
@@ -1185,7 +1185,7 @@
 								<td>90개</td>
 								<td>1,000원 <span class="option-badge">1개당/월</span></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">Short URL 수명</th>
 								<td>30일</td>
 								<td>구독 종료일까지</td>
@@ -1193,7 +1193,7 @@
 								<td>구독 종료일까지</td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">Custom URL 사용</th>
 								<td>-</td>
 								<td>-</td>
@@ -1201,7 +1201,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">Custom URL 수명</th>
 								<td>-</td>
 								<td>-</td>
@@ -1243,7 +1243,7 @@
 								<td>900분</td>
 								<td>4,000원 <span class="option-badge">100분당/월</span></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">통화 가능 횟수</th>
 								<td>무제한</td>
 								<td>무제한</td>
@@ -1251,7 +1251,7 @@
 								<td>무제한</td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">통화당 제한 시간</th>
 								<td>30분</td>
 								<td>30분</td>
@@ -1272,7 +1272,7 @@
 								<td>무제한</td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">글자수 제한</th>
 								<td>길이 제한 없음</td>
 								<td>길이 제한 없음</td>
@@ -1285,7 +1285,7 @@
 							<tr class="section-row">
 								<th colspan="6" scope="colgroup">데이터</th>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">데이터 베이스 생성</th>
 								<td>무제한</td>
 								<td>무제한</td>
@@ -1293,7 +1293,7 @@
 								<td>무제한</td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">데이터 필드 생성</th>
 								<td>무제한</td>
 								<td>무제한</td>
@@ -1314,7 +1314,7 @@
 							<tr class="section-row">
 								<th colspan="6" scope="colgroup">통계</th>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">QR 코드 스캔 횟수</th>
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1322,7 +1322,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">URL 유입 횟수</th>
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1330,7 +1330,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">페이지 체류 시간</th>
 								<td>-</td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1338,7 +1338,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">버튼 클릭 수</th>
 								<td>-</td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1346,7 +1346,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">통화 연결 횟수</th>
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1354,7 +1354,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">통화 연결 시간</th>
 								<td>-</td>
 								<td><span class="check-icon" aria-label="지원"></span></td>
@@ -1362,7 +1362,7 @@
 								<td><span class="check-icon" aria-label="지원"></span></td>
 								<td></td>
 							</tr>
-							<tr>
+							<tr class="features-pc">
 								<th scope="row">메세지 연결 횟수</th>
 								<td>-</td>
 								<td><span class="check-icon" aria-label="지원"></span></td>

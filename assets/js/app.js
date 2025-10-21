@@ -31,7 +31,7 @@ function initNavigation() {
 		if (!link || !submenu) return;
 
 		parent.addEventListener("pointerenter", () => {
-			if (window.innerWidth > 768) {
+			if (window.innerWidth > 991) {
 				closeAll();
 				submenu.classList.add("is-open");
 				link.classList.add("is-active");
@@ -40,7 +40,7 @@ function initNavigation() {
 		});
 
 		parent.addEventListener("pointerleave", () => {
-			if (window.innerWidth > 768) {
+			if (window.innerWidth > 991) {
 				submenu.classList.remove("is-open");
 				link.classList.remove("is-active");
 				link.setAttribute("aria-expanded", "false");
