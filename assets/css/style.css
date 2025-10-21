@@ -538,13 +538,17 @@ tbody th {
 	text-align: left;
 }
 th[colspan] {
-	--font-size: 0.8333em;
+	--font-size: 0.8889em;
 	--border-width: 0;
 	font-weight: var(--font-weight-semibold);	
 	padding: 0.7500rem 0.7380em;
 }
 tbody tr:not(:first-child) th[colspan] {
 	padding-top: 1.8750rem;
+}
+tbody th,
+tbody td {
+	--font-size: 0.7778em;
 }
 th[scope="row"] {
 	padding: 0.6875rem 2vw;
