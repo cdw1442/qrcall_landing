@@ -203,29 +203,36 @@ function initAccordion() {
 
 
 // ==============================
-// Swiper 초기화
+// Swiper 초기화 
+// - 768px 이하 loop 해제
 // ==============================
 function initSwiper() {
-	if (document.querySelector(".mainSwiper")) {
-		new Swiper(".mainSwiper", {
-			cssMode: true,
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-			},
-			mousewheel: true,
-			keyboard: true,
-		});
-	}
+  const el = document.querySelector(".swiper-pricing");
+  if (!el) return;
+
+  // 모바일 기준 (여기서는 768px 이하)
+  const isMobile = window.matchMedia("(min-width: 768px)").matches;
+
+  new Swiper(".swiper-pricing", {
+   
+	slidesPerView: 1,
+	spaceBetween: 10,
+	loop: !isMobile, // 768px 이하 true, 그외 false
+	cssMode: true,
+	navigation: {
+		nextEl: ".swiper-button-next",
+		prevEl: ".swiper-button-prev",
+	},
+	breakpoints: {
+		576: { slidesPerView: 1, spaceBetween: 10 },
+		768: { slidesPerView: 2, spaceBetween: 10 },
+		991: { slidesPerView: 4, spaceBetween: 10 },
+	},
+	mousewheel: true,
+	keyboard: true,
+  });
 }
+
 // ==============================
 // Popover 초기화
 // - data-popover -> lib
