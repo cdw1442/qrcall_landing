@@ -226,7 +226,42 @@ function initSwiper() {
 		});
 	}
 }
+// ==============================
+// Popover 초기화
+// - data-popover -> lib
+// - data-popover-target(#id) -> lib
+// - next sibling .popover-content(.pop-comp-content) <- data-popover에서 채움
+// - 라이브러리 API 차이(init vs constructor) 자동 대응
+// ==============================
+function initPopover() {
+	if (typeof PopoverComponent === "undefined" || !PopoverComponent.init) return;
 
+	document.querySelectorAll(".popover-ele").forEach((btn) => {
+		if (btn.dataset.popoverInitialized) return;
+
+		const data = btn.dataset.popover?.trim();
+		let content = btn.nextElementSibling;
+
+		if (data && content?.classList.contains("popover-content")) {
+			const inner = content.querySelector(".pop-comp-content");
+			if (inner) inner.innerHTML = data;
+			content.style.display = "none";
+		}
+
+		if (!btn.dataset.popoverTarget && content) {
+			if (!content.id) content.id = "popover-" + Math.random().toString(36).slice(2, 9);
+			btn.dataset.popoverTarget = "#" + content.id;
+		}
+
+		btn.dataset.popoverInitialized = "true";
+	});
+
+	PopoverComponent.init({ 
+		ele: ".popover-ele",
+		position: 'top left', // top, bottom, left, right 가능
+		hideArrowIcon: true,
+	});
+}
 
 
 // ==============================
@@ -271,6 +306,8 @@ const routes = {
 
 
 
+
+
 // ==============================
 // 라우터 실행
 // ==============================
@@ -279,16 +316,19 @@ function router() {
 	const tplId = routes[path] || routes["/"];
 	const tpl = document.getElementById(tplId);
 
-	if (tpl) {
-		document.getElementById("app").innerHTML = tpl.innerHTML;
-		initSwiper();
-		handleFeatureVisibility();
-		window.scrollTo({ top: 0, behavior: "smooth" });
+	if (!tpl) return;
 
-		// 아코디언 초기화
-		initAccordion();
-	}
+	document.getElementById("app").innerHTML = tpl.innerHTML;
+	// 페이지 공통 초기화
+	initSwiper(); 
+	initAccordion();
+	handleFeatureVisibility();
+	initPopover();
+	// 라우터 후 페이지 상단 이동
+	window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+
 
 
 
@@ -310,6 +350,12 @@ window.addEventListener("DOMContentLoaded", () => {
 	// 헤더 주입 후 initNavigation 실행
 	requestAnimationFrame(() => {
 		initNavigation();
+		initPopover(); // ✅ 팝오버 최초 초기화
+	});
+
+	// ✅ 라우팅 완료 시 팝오버 다시 초기화
+	window.addEventListener("hashchange", () => {
+		setTimeout(initPopover, 100);
 	});
 
 	// ✅ 리사이징 시 모바일/PC 감지 재실행
@@ -322,3 +368,4 @@ window.addEventListener("DOMContentLoaded", () => {
 		}
 	});
 });
+

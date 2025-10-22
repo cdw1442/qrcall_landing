@@ -150,8 +150,8 @@
 
 	/* padding --padding- */
 	--padding-base-y: 1.5000em;
-	--padding-base-x: 1.5000em;
-	--padding-base: 1.5000em;
+	--padding-base-x: 1.3125em;
+	--padding-base: 1.3125em;
 
 	/* border --border- */
 
@@ -529,29 +529,29 @@ td {
 	padding: 0.6875rem 0.5vw;
 	vertical-align: middle;
 }
+th[scope="row"] {
+	padding: 0.6875rem 1.5vw;
+}
+th[colspan] {
+	--font-size:1.0000rem;
+	--border-width: 0;
+	font-weight: var(--font-weight-semibold);	
+	padding: 0.7500rem 0.7380em;
+}
 thead th {
 	--bg-color: var(--color-primary);
 	--font-size: 0.7528em;
 	--font-color: var(--font-color-inverse);
 }
-tbody th {
-	text-align: left;
-}
-th[colspan] {
-	--font-size: 0.8889em;
-	--border-width: 0;
-	font-weight: var(--font-weight-semibold);	
-	padding: 0.7500rem 0.7380em;
-}
-tbody tr:not(:first-child) th[colspan] {
-	padding-top: 1.8750rem;
-}
 tbody th,
 tbody td {
 	--font-size: 0.7778em;
 }
-th[scope="row"] {
-	padding: 0.6875rem 2vw;
+tbody th {
+	text-align: left;
+}
+tbody tr:not(:first-child) th[colspan] {
+	padding-top: 1.8750rem;
 }
 tbody tr:hover th:not(th[colspan]),
 tbody tr:hover td {
@@ -562,7 +562,7 @@ tbody tr:hover td {
 	display: inline-block;
 	font-size: var(--font-size);
 }
-.check-icon {
+.icon-check {
 	display: inline-block;
 	width: 1rem;
 	height: 1rem;
@@ -570,9 +570,42 @@ tbody tr:hover td {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	vertical-align: middle;
 }
-
-
+.icon-help {
+	display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-image: url(../images/icon_help.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	vertical-align: middle;
+}
+.icon-help:hover {
+	background-image: url(../images/icon_help_hover.svg);
+}
+/* popover */
+.pop-comp-wrapper {
+	--font-size: 0.7500rem;
+	--font-color: var(--font-color-base);
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: var(--gray-300);
+	--border-radius: var(--border-radius-md);
+	--bg-color: var(--bg-base);
+	
+	font-size:var(--font-size);
+	color: var(--font-color);
+	border: var(--border-width) var(--border-style) var(--border-color);
+	border-radius: var(--border-radius);
+	background-color: var(--bg-color);
+	box-shadow: var(--shadow-base);
+	text-align: left;
+	flex-wrap: wrap;
+	padding: 0.5rem;
+	z-index: 1;
+}
 /* button */
 .btn {
 	--bg-color: var(--gray-150);
@@ -1022,6 +1055,7 @@ tbody tr:hover td {
 /* 대형 모바일 / 태블릿 가로 */
 /* Medium devices (tablets & large mobile, 576px ~ 767.98px) */
 @media (max-width: 767.98px) {
+	.features-pc {display: none;}
 	.hidden-md { display: none !important; }
 	.show-md { display: block !important; }
 	
