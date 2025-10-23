@@ -60,7 +60,7 @@
 				</a>
 			</div>
 			<!-- Navigation Toggler -->
-			<button class="ic-btn navbar-toggler" type="button" aria-label="Navigation Toggler">
+			<button class="ic-btn navbar-toggler" type="button" aria-label="Navigation Toggler" aria-controls="mainNavbar">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 22" fill="none">
 					<mask id="mask0_5_15027" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="22" height="22">
 						<rect width="22" height="22" fill="#D9D9D9"/>
@@ -229,7 +229,7 @@
 			</div>
 			<div class="image-wrap features-mobile hidden">
 				<img class="img " src="assets/images/service/platform/platform-01_m.png" alt="누구나 쉽게 연결할 수 있는 스마트 QR 커뮤니케이션 플랫폼">
-				<div class="card">
+				<div class="card card-externalLink">
 					<div class="card__header">
 						<h3 class="card__title">앱 다운로드</h3>
 					</div>
@@ -1083,269 +1083,264 @@
 					<p class="section__text text--gray">
 						비즈니스 단계에 알맞는 플랜을 선택하세요.
 					</p>
-				</div>
-
+				</div>				
 				<!-- Swiper -->
 				<div class="swiper swiper-pricing">
 					<div class="swiper-wrapper">					
 						<div class="swiper-slide">
 							<div class="pricing-box">
-								<div class="card-type2 recommend">
+								<div class="card card-pricing">
 									<div class="ribbon hidden"><span>Recommend</span></div>
 									<div class="card__header">
 										<div class="text-wrap column">
-											<div class="badge badge--secondary">
-												<h3 class="text--primary">Standard</h3>
+											<div class="badge">
+												<span class="text">Free</span>
 											</div>
-											<p class="section__text text--white">
-												전문 담당자가 있고<br>커뮤니케이션이 많아지기 시작한 사용자
+											<p class="text">
+												QRcall을 처음 사용하거나,<br>커뮤니케이션이 발생하기 시작한 사용자
 											</p>
-											<div class="section__title text--white pric">
-												<span class="">30,800원</span>
-												<span class="unit">월</span>
+											<div class="pric">
+												<span class="text">0원</span>
+												<span class="text unit">월</span>
 											</div>
 										</div>
 									</div>
 									<div class="card__body">
-										<h3 class="section__text--lg">플랜 제공량</h3>
+										<h3 class="text title">플랜 제공량</h3>
 										<ul class="list-group">
 											<li class="list-group-item">
 												<div><i class="icon-check"></i>기본 사용자</div>
-												<div>5명</div>
+												<div>1명</div>
+											</li>											
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>QR&Short UR</div>
+												<div>각 1개</div>
 											</li>
 											<li class="list-group-item">
 												<div><i class="icon-check"></i>모바일 페이지</div>
-												 <div>20개</div>
+												<div>1개</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QR&Short UR</div>
-												 <div>각 60개</div>
+												<div><i class="icon-check"></i>QRcall 전화</div>
+												<div>10분</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 전화</div>
-												 <div>600분</div>
+												<div><i class="icon-check"></i>QRcall 메시지</div>
+												<div>50회</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 메시지</div>
-												 <div>무제한</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>데이터 저장</div>
-												 <div>
-													무제한
-												</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>Custom URL</div>
-												 <div>사용 가능</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>음성 안내</div>
-												 <div>사용 가능</div>
+												<div><i class="icon-check"></i>데이터 저장</div>
+												<div>무제한</div>
 											</li>
 										</ul>
 									</div>
-									<div class="card__footer">
-										<button class="btn btn-fit btn-md btn-primary">바로 시작하기</button>
+									<div class="card__footer features-pc">
+										<button type="button"
+												class="btn btn-fit btn-md"
+												onclick="location.href='https://studio.dev.qrcall.kr/studio/cms/login'">
+												바로 시작하기
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="pricing-box">
-								<div class="card-type2">
+								<div class="card card-pricing">
 									<div class="ribbon hidden"><span>Recommend</span></div>
 									<div class="card__header">
 										<div class="text-wrap column">
-											<div class="badge badge--secondary">
-												<h3 class="text--primary">Standard</h3>
+											<div class="badge">
+												<span class="text">Basic</span>
 											</div>
-											<p class="section__text text--white">
-												전문 담당자가 있고<br>커뮤니케이션이 많아지기 시작한 사용자
+											<p class="text">
+												아직 담당자가 없고<br>커뮤니케이션이 많지 않은 사용자
 											</p>
-											<div class="section__title text--white pric">
-												<span class="">30,800원</span>
-												<span class="unit">월</span>
+											<div class="pric">
+												<span class="text">16,500원</span>
+												<span class="text unit">월/부가세 포함</span>
 											</div>
 										</div>
 									</div>
 									<div class="card__body">
-										<h3 class="section__text--lg">플랜 제공량</h3>
+										<h3 class="text title">플랜 제공량</h3>
+										<ul class="list-group">
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>기본 사용자</div>
+												<div>3명</div>
+											</li>											
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>QR&Short UR</div>
+												<div>각 30개</div>
+											</li>
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>모바일 페이지</div>
+												<div>10개</div>
+											</li>
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>QRcall 전화</div>
+												<div>300분</div>
+											</li>
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>QRcall 메시지</div>
+												<div>무제한</div>
+											</li>
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>데이터 저장</div>
+												<div>무제한</div>
+											</li>
+										</ul>
+									</div>
+									<div class="card__footer features-pc">
+										<button type="button"
+												class="btn btn-fit btn-md"
+												onclick="location.href='https://studio.dev.qrcall.kr/studio/cms/login'">
+												바로 시작하기
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide recommend">
+							<div class="pricing-box">
+								<div class="card card-pricing ">
+									<div class="ribbon hidden"><span>Recommend</span></div>
+									<div class="card__header">
+										<div class="text-wrap column">
+											<div class="badge">
+												<span class="text">Standard</span>
+											</div>
+											<p class="text">
+												전문 담당자가 있고<br>커뮤니케이션이 많아지기 시작한 사용자
+											</p>
+											<div class="pric">
+												<span class="text">30,800원</span>
+												<span class="text unit">월</span>
+											</div>
+										</div>
+									</div>
+									<div class="card__body">
+										<h3 class="text title">플랜 제공량</h3>
 										<ul class="list-group">
 											<li class="list-group-item">
 												<div><i class="icon-check"></i>기본 사용자</div>
 												<div>5명</div>
 											</li>
 											<li class="list-group-item">
+												<div><i class="icon-check"></i>QR&Short UR</div>
+												<div>각 60개</div>
+											</li>
+											<li class="list-group-item">
 												<div><i class="icon-check"></i>모바일 페이지</div>
-												 <div>20개</div>
+												<div>20개</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QR&Short UR</div>
-												 <div>각 60개</div>
+												<div><i class="icon-check"></i>QRcall 전화</div>
+												<div>600분</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 전화</div>
-												 <div>600분</div>
+												<div><i class="icon-check"></i>QRcall 메시지</div>
+												<div>무제한</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 메시지</div>
-												 <div>무제한</div>
+												<div><i class="icon-check"></i>데이터 저장</div>
+												<div>무제한</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>데이터 저장</div>
-												 <div>
-													무제한
-												</div>
+												<div><i class="icon-check"></i>Custom URL</div>
+												<div>사용 가능</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>Custom URL</div>
-												 <div>사용 가능</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>음성 안내</div>
-												 <div>사용 가능</div>
+												<div><i class="icon-check"></i>음성 안내</div>
+												<div>사용 가능</div>
 											</li>
 										</ul>
 									</div>
-									<div class="card__footer">
-										<button class="btn btn-fit btn-md btn-primary">바로 시작하기</button>
+									<div class="card__footer features-pc">
+										<button type="button"
+												class="btn btn-fit btn-md"
+												onclick="location.href='https://studio.dev.qrcall.kr/studio/cms/login'">
+												바로 시작하기
+										</button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="pricing-box">
-								<div class="card-type2">
+								<div class="card card-pricing">
 									<div class="ribbon hidden"><span>Recommend</span></div>
 									<div class="card__header">
 										<div class="text-wrap column">
-											<div class="badge badge--secondary">
-												<h3 class="text--primary">Standard</h3>
+											<div class="badge">
+												<span class="text">Premium</span>
 											</div>
-											<p class="section__text text--white">
-												전문 담당자가 있고<br>커뮤니케이션이 많아지기 시작한 사용자
+											<p class="text">
+												전문팀이 있고<br>커뮤니케이션 프로세스가 있는 사용자
 											</p>
-											<div class="section__title text--white pric">
-												<span class="">30,800원</span>
-												<span class="unit">월</span>
+											<div class="pric">
+												<span class="text">45,100원</span>
+												<span class="text unit">월</span>
 											</div>
 										</div>
 									</div>
 									<div class="card__body">
-										<h3 class="section__text--lg">플랜 제공량</h3>
+										<h3 class="text title">플랜 제공량</h3>
 										<ul class="list-group">
 											<li class="list-group-item">
 												<div><i class="icon-check"></i>기본 사용자</div>
-												<div>5명</div>
+												<div>10명</div>
+											</li>
+											<li class="list-group-item">
+												<div><i class="icon-check"></i>QR&Short UR</div>
+												<div>각 90개</div>
 											</li>
 											<li class="list-group-item">
 												<div><i class="icon-check"></i>모바일 페이지</div>
-												 <div>20개</div>
+												<div>30개</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QR&Short UR</div>
-												 <div>각 60개</div>
+												<div><i class="icon-check"></i>QRcall 전화</div>
+												<div>900분</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 전화</div>
-												 <div>600분</div>
+												<div><i class="icon-check"></i>QRcall 메시지</div>
+												<div>무제한</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 메시지</div>
-												 <div>무제한</div>
+												<div><i class="icon-check"></i>데이터 저장</div>
+												<div>무제한</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>데이터 저장</div>
-												 <div>
-													무제한
-												</div>
+												<div><i class="icon-check"></i>Custom URL</div>
+												<div>사용 가능</div>
 											</li>
 											<li class="list-group-item">
-												 <div><i class="icon-check"></i>Custom URL</div>
-												 <div>사용 가능</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>음성 안내</div>
-												 <div>사용 가능</div>
+												<div><i class="icon-check"></i>음성 안내</div>
+												<div>사용 가능</div>
 											</li>
 										</ul>
 									</div>
-									<div class="card__footer">
-										<button class="btn btn-fit btn-md btn-primary">바로 시작하기</button>
+									<div class="card__footer features-pc">
+										<button type="button"
+												class="btn btn-fit btn-md"
+												onclick="location.href='https://studio.dev.qrcall.kr/studio/cms/login'">
+												바로 시작하기
+										</button>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="pricing-box">
-								<div class="card-type2">
-									<div class="ribbon hidden"><span>Recommend</span></div>
-									<div class="card__header">
-										<div class="text-wrap column">
-											<div class="badge badge--secondary">
-												<h3 class="text--primary">Standard</h3>
-											</div>
-											<p class="section__text text--white">
-												전문 담당자가 있고<br>커뮤니케이션이 많아지기 시작한 사용자
-											</p>
-											<div class="section__title text--white pric">
-												<span class="">30,800원</span>
-												<span class="unit">월</span>
-											</div>
-										</div>
-									</div>
-									<div class="card__body">
-										<h3 class="section__text--lg">플랜 제공량</h3>
-										<ul class="list-group">
-											<li class="list-group-item">
-												<div><i class="icon-check"></i>기본 사용자</div>
-												<div>5명</div>
-											</li>
-											<li class="list-group-item">
-												<div><i class="icon-check"></i>모바일 페이지</div>
-												 <div>20개</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QR&Short UR</div>
-												 <div>각 60개</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 전화</div>
-												 <div>600분</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>QRcall 메시지</div>
-												 <div>무제한</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>데이터 저장</div>
-												 <div>
-													무제한
-												</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>Custom URL</div>
-												 <div>사용 가능</div>
-											</li>
-											<li class="list-group-item">
-												 <div><i class="icon-check"></i>음성 안내</div>
-												 <div>사용 가능</div>
-											</li>
-										</ul>
-									</div>
-									<div class="card__footer">
-										<button class="btn btn-fit btn-md btn-primary">바로 시작하기</button>
-									</div>
-								</div>
-							</div>
-						</div>mg class="img" src="assets/images/business/o4o/o4o-04.png" alt="사회적 가치를 우선합니다" >
 						</div>
 					</div>
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 					<div class="swiper-pagination"></div>
 				</div>
+			</div>
+			<div class="text-wrap column information">
+				<p class="section__text text--gray">
+					모든 요금은 VAT가 포함된 가격입니다.
+				</p>
 			</div>
 		</div>
 	</div>

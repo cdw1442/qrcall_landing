@@ -119,7 +119,7 @@ function initNavigation() {
 	const brandLogo = document.querySelector(".header__brand a[href='#/']");
 	if (brandLogo) {
 		brandLogo.addEventListener("click", (e) => {
-			if (window.innerWidth <= 768) {
+			if (window.innerWidth <= 991) {
 				const href = brandLogo.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -144,7 +144,7 @@ function initNavigation() {
 	// 외부 클릭 시 드롭다운 닫기 (PC)
 	// ----------------------------
 	document.addEventListener("click", (e) => {
-		if (window.innerWidth > 768 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
+		if (window.innerWidth > 991 && !e.target.closest(".dropdown") && !e.target.closest(".navbar-toggler") && !e.target.closest("#mainNavbar")) {
 			closeAll();
 		}
 	});
@@ -155,7 +155,7 @@ function initNavigation() {
 	let lastWidth = window.innerWidth;
 	window.addEventListener("resize", () => {
 		const currentWidth = window.innerWidth;
-		if ((lastWidth > 768 && currentWidth <= 768) || (lastWidth <= 768 && currentWidth > 768)) {
+		if ((lastWidth > 991 && currentWidth <= 991) || (lastWidth <= 991 && currentWidth > 991)) {
 			closeAll();
 			offcanvas.classList.remove("is-show");
 			document.body.classList.remove("no-scroll");
@@ -203,35 +203,48 @@ function initAccordion() {
 
 
 // ==============================
-// Swiper 초기화 
-// - 768px 이하 loop 해제
+// Swiper 초기화
+// - 768px 이하 loop 활성화, 3번째 슬라이드부터 시작
 // ==============================
 function initSwiper() {
-  const el = document.querySelector(".swiper-pricing");
-  if (!el) return;
+	const el = document.querySelector(".swiper-pricing");
+	if (!el) return;
 
-  // 모바일 기준 (여기서는 768px 이하)
-  const isMobile = window.matchMedia("(min-width: 768px)").matches;
+	// 768px 이하 → 모바일
+	const isMobile = window.innerWidth <= 768;
 
-  new Swiper(".swiper-pricing", {
-   
-	slidesPerView: 1,
-	spaceBetween: 10,
-	loop: !isMobile, // 768px 이하 true, 그외 false
-	cssMode: true,
-	navigation: {
-		nextEl: ".swiper-button-next",
-		prevEl: ".swiper-button-prev",
-	},
-	breakpoints: {
-		576: { slidesPerView: 1, spaceBetween: 10 },
-		768: { slidesPerView: 2, spaceBetween: 10 },
-		991: { slidesPerView: 4, spaceBetween: 10 },
-	},
-	mousewheel: true,
-	keyboard: true,
-  });
+	// 기존 Swiper 인스턴스 제거 (중복 초기화 방지)
+	if (el.swiper) {
+		el.swiper.destroy(true, true);
+	}
+
+	const swiper = new Swiper(".swiper-pricing", {
+		slidesPerView: 1,
+		loop: isMobile, // 모바일일 때 loop 활성화
+		cssMode: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			576: { slidesPerView: 1 },
+			768: { slidesPerView: 2 },
+			991: { slidesPerView: 4 },
+		},
+		mousewheel: true,
+		keyboard: true,
+
+		on: {
+			init(swiper) {
+				// ✅ 모바일에서만 3번째 슬라이드(인덱스 2)부터 시작
+				if (isMobile) {
+					swiper.slideToLoop(2, 0); // loop 상태에서도 정상 작동
+				}
+			},
+		},
+	});
 }
+
 
 // ==============================
 // Popover 초기화
