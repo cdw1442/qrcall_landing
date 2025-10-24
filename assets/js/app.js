@@ -204,14 +204,14 @@ function initAccordion() {
 
 // ==============================
 // Swiper 초기화
-// - 768px 이하 loop 활성화, 3번째 슬라이드부터 시작
+// - 990px 이하 loop 활성화, 3번째 슬라이드부터 시작
 // ==============================
 function initSwiper() {
 	const el = document.querySelector(".swiper-pricing");
 	if (!el) return;
 
-	// 768px 이하 → 모바일
-	const isMobile = window.innerWidth <= 768;
+	// 990px 이하 → 모바일
+	const isMobile = window.innerWidth <= 990;
 
 	// 기존 Swiper 인스턴스 제거 (중복 초기화 방지)
 	if (el.swiper) {
@@ -227,8 +227,8 @@ function initSwiper() {
 			prevEl: ".swiper-button-prev",
 		},
 		breakpoints: {
-			576: { slidesPerView: 1 },
-			768: { slidesPerView: 2 },
+			576: { slidesPerView: 2 },
+			768: { slidesPerView: 3 },
 			991: { slidesPerView: 4 },
 		},
 		mousewheel: true,

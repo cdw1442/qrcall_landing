@@ -604,12 +604,12 @@ tbody tr:hover td {
 }
 .icon-help {
 	display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    background-image: url(../images/icon_help.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
+	width: 1rem;
+	height: 1rem;
+	background-image: url(../images/icon_help.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
 	vertical-align: middle;
 }
 .icon-help:hover {
@@ -736,7 +736,7 @@ tbody tr:hover td {
 .accordion-body {
 	min-height: 5.2857em;
 	display: flex;
-    align-items: center;	
+	align-items: center;	
 	font-size: 0.7778em;
 	font-weight: var(--font-weight-medium);
 	line-height: var(--line-height-sm);
@@ -751,7 +751,7 @@ tbody tr:hover td {
 	height: 1rem;
 	display: flex;
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 	padding: 0.25rem;
 	transition: transform 0.25s;
 }
@@ -1191,17 +1191,20 @@ tbody tr:hover td {
 .pricing-card .text-wrap.information {
 	align-items: flex-end;
 	text-align: right;
+	padding: 0 calc(var(--swiper-navigation-size) * 0.5);
+}
+.information .section__text {
+	--font-size-sm: 0.7778em;
 }
 .pricing-card .swiper {
 	display: flex;
-	padding: 0 calc(var(--swiper-navigation-size) * 0.5);
 }
 .pricing-card .swiper-wrapper {
 	height: unset;
 	align-items: stretch;
 }
 .pricing-card .swiper-slide {
-	padding: 10px;
+	padding: 0.5000rem;
 }
 .card-pricing {	
 	--border-color: var(--gray-200);
@@ -1212,7 +1215,7 @@ tbody tr:hover td {
 	height: 100%;
 	background-clip: border-box;
 }
-.recommend .card-pricing {
+.card-pricing:hover {
 	--border-color: var(--color-primary);
 }
 .card-pricing > * {
@@ -1227,15 +1230,22 @@ tbody tr:hover td {
 	line-height: var(--line-height);
 	font-weight: var(--font-weight);
 	background-color: var(--bg-color);
+	min-height: 12.5000rem;
 }
-.card-pricing .card__header .text-wrap.column {
+.card-pricing .card__header .text-wrap {
+	height: 100%;
+	justify-content: space-between;
 	gap: 0.75rem;
+}
+.card-pricing .card__header .text-wrap > .text {
+	font-size: calc(var(--font-size-sm) / 1.15);
 }
 .pric {
 	--font-weight: var(--font-weight-bold);
 	font-size: calc(var(--font-size) * 1.5);
 	line-height: var(--line-height);
 	font-weight: var(--font-weight);
+	margin-top: auto;
 }
 .pric .unit {
 	--line-height: var(--line-height-sm);
@@ -1246,12 +1256,12 @@ tbody tr:hover td {
 	--bg-color: transparent;
 	--font-color: var(--font-color-base);
 }
-.recommend .card-pricing .badge {
+.card-pricing:hover .badge {
 	--bg-color: var(--bg-base);
 	--font-color: var(--font-color-primary);
 
 }
-.recommend .card-pricing .card__header {
+.card-pricing:hover .card__header {
 	--bg-color: var(--bg-primary);
 	color: var(--font-color-inverse);
 	background-color: var(--bg-color);
@@ -1285,7 +1295,7 @@ tbody tr:hover td {
 	border: none;
 	margin-top: auto;
 }
-.recommend .btn {
+.card-pricing:hover .btn {
 	--bg-color: var(--color-primary);
 	--font-color: var(--font-color-inverse);
 }
@@ -1399,18 +1409,7 @@ tbody tr:hover td {
 		color: var(--gray-800);
 		padding: 0.9375em;
 	}
-	/* PC hover & JS toggle 공통 */
-	.dropdown-menu.is-open {
-		display: flex;
-		flex-direction: column;
-		row-gap: 0.2500em;
-	}
-	/* dropdown-menu : Mobile toggle*/
-	.dropdown-menu.is-open {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(-0.000em);
-	}
+	
 	/* page ------------------------------------------------------- */
 	.pricing-card .card-pricing {
 		--border-color: var(--color-primary);
@@ -1418,7 +1417,6 @@ tbody tr:hover td {
 	.pricing-card .card-pricing .badge {
 		--bg-color: var(--bg-base);
 		--font-color: var(--font-color-primary);
-
 	}
 	.pricing-card .card-pricing .card__header {
 		--bg-color: var(--bg-primary);
@@ -1429,6 +1427,12 @@ tbody tr:hover td {
 		--bg-color: var(--color-primary);
 		--font-color: var(--font-color-inverse);
 	}
+	.pricing-card .swiper {
+		padding: 0 calc(var(--swiper-navigation-size) * 0.5);
+	}
+	.card-pricing .card__header {
+		min-height: 11.8750rem;
+	}
 }
 @media (min-width: 768px) and (max-width: 991.98px) { }
 
@@ -1438,6 +1442,12 @@ tbody tr:hover td {
 	.hidden-md { display: none !important; }
 	.show-md { display: block !important; }
 	
+	.card-pricing .card__header .text-wrap > .text {
+		font-size: calc(var(--font-size-sm) / 1);
+	}
+	.pric {
+		font-size: calc(var(--font-size) * 2);
+	}
 	
 }
 @media (min-width: 576px) and (max-width: 767.98px) {}
@@ -1466,8 +1476,7 @@ tbody tr:hover td {
 	/* page ------------------------------------------------------- */
 	.card__body {
 		padding: calc(var(--padding-base) / 3) calc(var(--padding-base) / 2);
-	}
-	
+	}	
 }
 @media (min-width: 480px) and (max-width: 575.98px) { }
 
@@ -1484,7 +1493,6 @@ tbody tr:hover td {
 ================================== */
 /* 모바일 (터치 전용 기기) */
 @media (pointer: coarse) or (hover: none) {
-	.features-pc {display: none;}
 
 	.pc-only { display: none; }
 	.mo-only { display: block; }
@@ -1569,18 +1577,7 @@ tbody tr:hover td {
 		color: var(--gray-800);
 		padding: 0.9375em;
 	}
-	/* PC hover & JS toggle 공통 */
-	.dropdown-menu.is-open {
-		display: flex;
-		flex-direction: column;
-		row-gap: 0.2500em;
-	}
-	/* dropdown-menu : Mobile toggle*/
-	.dropdown-menu.is-open {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(-0.000em);
-	}
+	
 	/* page ------------------------------------------------------- */
 	/* 가격 비교표 */
 	.price-comparison tbody th {
