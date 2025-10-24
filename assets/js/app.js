@@ -58,7 +58,7 @@ function initNavigation() {
 			const parentDropdown = parentItem.closest(".dropdown");
 			const submenu = parentDropdown.querySelector(".dropdown-menu");
 
-			if (window.innerWidth <= 768) {
+			if (window.innerWidth <= 991) {
 				if (submenu) {
 					e.preventDefault();
 					const isOpen = submenu.classList.contains("is-open");
@@ -100,7 +100,7 @@ function initNavigation() {
 	// ----------------------------
 	document.querySelectorAll("#mainNavbar .dropdown-menu .nav-link").forEach(subLink => {
 		subLink.addEventListener("click", (e) => {
-			if (window.innerWidth <= 768) {
+			if (window.innerWidth <= 991) {
 				const href = subLink.getAttribute("href");
 				if (href && href.startsWith("#/")) {
 					e.preventDefault();
@@ -236,9 +236,9 @@ function initSwiper() {
 
 		on: {
 			init(swiper) {
-				// ✅ 모바일에서만 3번째 슬라이드(인덱스 2)부터 시작
+				// 모바일에서만 3번째 슬라이드(인덱스 2)부터 시작
 				if (isMobile) {
-					swiper.slideToLoop(2, 0); // loop 상태에서도 정상 작동
+					swiper.slideToLoop(2, 0); 
 				}
 			},
 		},
@@ -370,15 +370,15 @@ window.addEventListener("DOMContentLoaded", () => {
 	// 헤더 주입 후 initNavigation 실행
 	requestAnimationFrame(() => {
 		initNavigation();
-		initPopover(); // ✅ 팝오버 최초 초기화
+		initPopover(); // 팝오버 최초 초기화
 	});
 
-	// ✅ 라우팅 완료 시 팝오버 다시 초기화
+	// 라우팅 완료 시 팝오버 다시 초기화
 	window.addEventListener("hashchange", () => {
 		setTimeout(initPopover, 100);
 	});
 
-	// ✅ 리사이징 시 모바일/PC 감지 재실행
+	// 리사이징 시 모바일/PC 감지 재실행
 	let lastMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";
 	window.addEventListener("resize", () => {
 		const currentMode = /Mobi|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "pc";

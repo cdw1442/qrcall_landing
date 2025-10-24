@@ -780,8 +780,9 @@ tbody tr:hover td {
 	position: relative;
 }
 .swiper-button-next,.swiper-button-prev {
-	--swiper-navigation-size: 1.875rem;
+	--swiper-navigation-size: 2rem;
 	--swiper-theme-color: var(--gray-600);
+	--swiper-navigation-sides-offset: -6px;
 	top: var(--swiper-navigation-top-offset,50%);
 	width: calc(var(--swiper-navigation-size)/ 44 * 50);
 }
@@ -1193,6 +1194,7 @@ tbody tr:hover td {
 }
 .pricing-card .swiper {
 	display: flex;
+	padding: 0 calc(var(--swiper-navigation-size) * 0.5);
 }
 .pricing-card .swiper-wrapper {
 	height: unset;
@@ -1313,34 +1315,6 @@ tbody tr:hover td {
 @media (max-width: 991.98px) {
 	.hidden-lg { display: none !important; }
 	.show-lg { display: block !important; }
-	.pricing-card .swiper {
-		padding: 0 calc(var(--swiper-navigation-size) * 0.875) ;
-	}
-	.pricing-card .card-pricing {
-		--border-color: var(--color-primary);
-	}
-	.pricing-card .card-pricing .badge {
-		--bg-color: var(--bg-base);
-		--font-color: var(--font-color-primary);
-
-	}
-	.pricing-card .card-pricing .card__header {
-		--bg-color: var(--bg-primary);
-		color: var(--font-color-inverse);
-		background-color: var(--bg-color);
-	}
-	.pricing-card .btn {
-		--bg-color: var(--color-primary);
-		--font-color: var(--font-color-inverse);
-	}
-}
-@media (min-width: 768px) and (max-width: 991.98px) { }
-
-/* 대형 모바일 / 태블릿 가로 */
-/* Medium devices (tablets & large mobile, 576px ~ 767.98px) */
-@media (max-width: 767.98px) {
-	.hidden-md { display: none !important; }
-	.show-md { display: block !important; }
 	
 	.pc-only { display: none; }
 	.mo-only { display: block; }
@@ -1366,11 +1340,11 @@ tbody tr:hover td {
 		width: 100%;
 		max-width: 100%;
 		position: fixed;
-		top: 3.8750em;
+		top: 3.8750rem;
 		right: 0;
 		bottom: 0;
 		transform: translateX(100%);
-		background-color: var(--white);
+		background-color: var(--bg-base);
 		padding: 0.6250em 0;
 		display: flex;
 		flex-direction: column;		
@@ -1384,6 +1358,7 @@ tbody tr:hover td {
 	.offcanvas.is-show .offcanvas-body {
 		padding: 0 1.2500em;
 	}
+	/* dropdown */
 	.dropdown {
 		width: 100%;
 	}
@@ -1424,6 +1399,45 @@ tbody tr:hover td {
 		color: var(--gray-800);
 		padding: 0.9375em;
 	}
+	/* PC hover & JS toggle 공통 */
+	.dropdown-menu.is-open {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.2500em;
+	}
+	/* dropdown-menu : Mobile toggle*/
+	.dropdown-menu.is-open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(-0.000em);
+	}
+	/* page ------------------------------------------------------- */
+	.pricing-card .card-pricing {
+		--border-color: var(--color-primary);
+	}
+	.pricing-card .card-pricing .badge {
+		--bg-color: var(--bg-base);
+		--font-color: var(--font-color-primary);
+
+	}
+	.pricing-card .card-pricing .card__header {
+		--bg-color: var(--bg-primary);
+		color: var(--font-color-inverse);
+		background-color: var(--bg-color);
+	}
+	.pricing-card .btn {
+		--bg-color: var(--color-primary);
+		--font-color: var(--font-color-inverse);
+	}
+}
+@media (min-width: 768px) and (max-width: 991.98px) { }
+
+/* 대형 모바일 / 태블릿 가로 */
+/* Medium devices (tablets & large mobile, 576px ~ 767.98px) */
+@media (max-width: 767.98px) {
+	.hidden-md { display: none !important; }
+	.show-md { display: block !important; }
+	
 	
 }
 @media (min-width: 576px) and (max-width: 767.98px) {}
@@ -1469,8 +1483,9 @@ tbody tr:hover td {
 	DEVICE
 ================================== */
 /* 모바일 (터치 전용 기기) */
-@media (pointer: coarse) {
+@media (pointer: coarse) or (hover: none) {
 	.features-pc {display: none;}
+
 	.pc-only { display: none; }
 	.mo-only { display: block; }
 
@@ -1479,7 +1494,6 @@ tbody tr:hover td {
 	}
 	.header__inner {
 		column-gap: 1rem;
-		max-width: 100%;
 	}
 	.control {
 		display: none;
@@ -1496,11 +1510,11 @@ tbody tr:hover td {
 		width: 100%;
 		max-width: 100%;
 		position: fixed;
-		top: 3.8750em;
+		top: 3.8750rem;
 		right: 0;
 		bottom: 0;
 		transform: translateX(100%);
-		background-color: var(--white);
+		background-color: var(--bg-base);
 		padding: 0.6250em 0;
 		display: flex;
 		flex-direction: column;		
@@ -1514,6 +1528,7 @@ tbody tr:hover td {
 	.offcanvas.is-show .offcanvas-body {
 		padding: 0 1.2500em;
 	}
+	/* dropdown */
 	.dropdown {
 		width: 100%;
 	}
@@ -1554,6 +1569,18 @@ tbody tr:hover td {
 		color: var(--gray-800);
 		padding: 0.9375em;
 	}
+	/* PC hover & JS toggle 공통 */
+	.dropdown-menu.is-open {
+		display: flex;
+		flex-direction: column;
+		row-gap: 0.2500em;
+	}
+	/* dropdown-menu : Mobile toggle*/
+	.dropdown-menu.is-open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(-0.000em);
+	}
 	/* page ------------------------------------------------------- */
 	/* 가격 비교표 */
 	.price-comparison tbody th {
@@ -1566,10 +1593,28 @@ tbody tr:hover td {
 	.price-comparison .section-row {
 		display: none;
 	}
+	.pricing-card .card-pricing {
+		--border-color: var(--color-primary);
+	}
+	.pricing-card .card-pricing .badge {
+		--bg-color: var(--bg-base);
+		--font-color: var(--font-color-primary);
+
+	}
+	.pricing-card .card-pricing .card__header {
+		--bg-color: var(--bg-primary);
+		color: var(--font-color-inverse);
+		background-color: var(--bg-color);
+	}
+	.pricing-card .btn {
+		--bg-color: var(--color-primary);
+		--font-color: var(--font-color-inverse);
+	}
 	
 }
 /* PC (정교한 포인터, 마우스) */
-@media (pointer: fine) {
+@media (pointer: fine) or (hover: hover) {
+
 }
 /* PC: hover 가능 */
 @media (hover: hover) {
