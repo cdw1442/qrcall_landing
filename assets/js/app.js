@@ -204,14 +204,14 @@ function initAccordion() {
 
 // ==============================
 // Swiper 초기화
-// - 990px 이하 loop 활성화, 3번째 슬라이드부터 시작
+// - 991px 이하 loop 활성화, 3번째 슬라이드부터 시작
 // ==============================
 function initSwiper() {
 	const el = document.querySelector(".swiper-pricing");
 	if (!el) return;
 
-	// 990px 이하 → 모바일
-	const isMobile = window.innerWidth <= 990;
+	// 991px 이하 → 모바일
+	const isMobile = window.innerWidth <= 991;
 
 	// 기존 Swiper 인스턴스 제거 (중복 초기화 방지)
 	if (el.swiper) {
