@@ -784,7 +784,7 @@ tbody tr:hover td {
 	--swiper-theme-color: var(--gray-600);
 	--swiper-navigation-sides-offset: -6px;
 	top: var(--swiper-navigation-top-offset,50%);
-	width: calc(var(--swiper-navigation-size)/ 44 * 50);
+	width: calc(var(--swiper-navigation-size)/ 44 * 60);
 }
 .swiper-pagination-bullet {
 	--swiper-pagination-color: var(--gray-600);
@@ -1428,7 +1428,7 @@ tbody tr:hover td {
 		--font-color: var(--font-color-inverse);
 	}
 	.pricing-card .swiper {
-		padding: 0 calc(var(--swiper-navigation-size) * 0.5);
+		padding: 0 calc(var(--swiper-navigation-size) * 0.75);
 	}
 	.card-pricing .card__header {
 		min-height: 11.8750rem;
